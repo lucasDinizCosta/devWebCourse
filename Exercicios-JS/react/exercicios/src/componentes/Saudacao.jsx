@@ -7,6 +7,13 @@ export default class Saudacao extends Component{
         nome: this.props.nome
     }
 
+    constructor(props){
+        super(props)    // Deve ser chamado para as propriedades irem pra superclasse
+        
+        this.setTipo = this.setTipo.bind(this)
+        // this.setNome = this.setNome.bind(this)
+    }
+
     setTipo(e){
         //console.log(e.target.value);
         // let i = 1
@@ -27,7 +34,7 @@ export default class Saudacao extends Component{
                 <h1>{tipo} {nome}!</h1>
                 <hr />
                 <input type="text" placeholder="Tipo..." 
-                    value={tipo} onChange={e => this.setTipo(e)}/>
+                    value={tipo} onChange={this.setTipo}/>
                 <input type="text" placeholder="Nome..." 
                     value={nome} onChange={e => this.setNome(e)}/>
             </div>
