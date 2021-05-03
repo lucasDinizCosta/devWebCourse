@@ -1,5 +1,5 @@
 function Pessoa(){
-    this.idade = 0
+    this.idade = 0;
     const self = this;
     setInterval( function(){
         this.idade++
