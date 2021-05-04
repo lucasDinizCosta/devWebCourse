@@ -10,7 +10,7 @@ comparaComThis = comparaComThis.bind(obj)   // Mudando a referencia do this
 comparaComThis(global)
 comparaComThis(obj)
 
-console.log("-- Arrow Function -- ");
+console.log("-- Arrow Function --");
 // Essa função foi definida num modulo do node
 // O dono da função vai ser o modulo
 let comparaComThisArrow = param => console.log(this === param);
