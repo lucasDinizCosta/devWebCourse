@@ -18,4 +18,4 @@ function teste(){
 teste()
 // console.log(local); // O escopo da variavel VAR é limitada ao bloco dentro da função
 // A variavel var é adicionada dentro do objeto Window no navegador
-// Problema: Usar a variavel global e ela for sobreescrita
+// Problema: Usar a variavel global e ela for sobre-escrita

@@ -6,7 +6,7 @@ const multiplicacao = a * b
 const divisao = d / a
 const modulo = a % 2
 
-// NO ES7 tem a versao de exponeciação mais facil
+// NO ES7 tem a versao de exponenciação mais facil
 const potencia = a ** b
 
 console.log(soma, subtracao, multiplicacao, divisao, modulo, potencia);
