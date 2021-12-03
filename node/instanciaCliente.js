@@ -4,7 +4,7 @@ const contadorB = require('./instanciaUnica')
 
 // Recebendo o objeto da função factory que cria um objeto novo
 // Driblando essa ideia do cache
-const contadorC = require('./instanciaNova')()
+const contadorC = require('./instanciaNova')()  // Chamando a função factory
 const contadorD = require('./instanciaNova')()
 
 contadorA.inc()

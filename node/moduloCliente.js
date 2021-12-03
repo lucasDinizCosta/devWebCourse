@@ -1,3 +1,4 @@
+// Para importar módulos utiliza-se o prefixo 'require'
 // Importando elementos no node
 const moduloA = require('./moduloA')
 const moduloB = require('./moduloB')

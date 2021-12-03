@@ -10,7 +10,7 @@ function LogThis(){
     console.log(this === module.exports);
     console.log(this === global);   // True, 'this' Aponta para global
 
-    // Desse modo está adicionando no global
+    // Desse modo está adicionando no escopo global
     this.perigo = '...'
 }
 
