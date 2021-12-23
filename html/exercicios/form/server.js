@@ -8,8 +8,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 // Pega os dados adicionados via formulario
 app.post('/usuarios', (req, resp) => {
     console.log(req.body); // dados do formulario
-    // Se os dados viessem por um 'GET'
-    console.log(req.query);
+    // Se os dados viessem por um 'GET' seria:
+    // console.log(req.query);
     resp.send('<h1>Parabéns. Usuário Incluído!</h1>')
 })
 

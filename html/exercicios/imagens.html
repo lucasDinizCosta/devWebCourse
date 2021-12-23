@@ -1,0 +1,207 @@
+<h1>Trabalhando com Imagens</h1>
+
+<!-- 
+    Links das imagens
+    http://files.cod3r.com.br/curso-web/imagem1.jpg
+    http://files.cod3r.com.br/curso-web/imagem2.gif
+    http://files.cod3r.com.br/curso-web/imagem3.png
+    http://files.cod3r.com.br/curso-web/imagem4.jpg
+    http://files.cod3r.com.br/curso-web/avatar.jpg
+    http://files.cod3r.com.br/curso-web/logo-larga.png
+    http://files.cod3r.com.br/curso-web/logo-estreita.png
+
+    alt: atributo geralmente aparece quando a imagem nao foi 
+    carregada corretamente, também é interpretada por leitores
+    para deficientes visuais
+ -->
+<h2>Slider</h2>
+ <!-- Criando um slider -->
+<div wm-slider>
+    <p class="paragrafoSlider">
+        <img src="../exercicios/img/imagem1.jpg"
+            alt="Muro da Cidade"
+            width="513" height="342"
+            title="Muro da Cidade por Tarso Bessa">
+    </p>
+    
+    <p class="paragrafoSlider">
+        <img src="../exercicios/img/imagem2.gif" 
+            alt="Intro Cod3r" height="342">
+    </p>
+    
+    <p class="circular paragrafoSlider">
+        <img src="../exercicios/img/imagem3.png" 
+            alt="Rio de Janeiro" height="342">
+    </p>
+    
+    <!-- Atributo 'align' nao existe mais no HTML5, 
+        como solução ajustar via CSS algo como 
+        'float: left'
+    -->
+    <p class="texto paragrafoSlider">
+        <img src="../exercicios/img/avatar.jpg" 
+            alt="avatar" height="50">
+            Texto koaksdkao lorem ipsum dolor sit amet lorem ipsum dolor sit am
+            lorem ipsum dolor sit amet lorem ipsum dolor sit
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat reprehenderit, 
+            officiis est atque recusandae blanditiis asperiores culpa maxime optio perspiciatis 
+            unde ex doloremque illum vitae pariatur molestias libero! Illo, fuga.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio, 
+            assumenda? Quae magnam ipsa in quos quaerat, numquam eum dignissimos sed 
+            ratione eius libero, iure tempora nobis quam. Blanditiis, illo sint?
+    </p>
+    
+    <!-- Atribuindo imagem via CSS -->
+    <p class="cidade paragrafoSlider"></p>
+    
+    <p class="paragrafoSlider">
+        <!-- Permite colocar varias imagens dependendo do 
+            tamanho da tela do dispositivo-->
+        <picture>
+            <source srcset="../exercicios/img/logo-larga.png"
+                media="(min-width: 600px)">
+            <img srcset="../exercicios/img/logo-estreita.png"
+                alt="Logo">
+        </picture>
+    </p>
+</div>
+
+<div id="div2">
+    <h2>Imagens</h2>
+        <p>
+            <img src="../exercicios/img/imagem1.jpg"
+                alt="Muro da Cidade"
+                width="513" height="342"
+                title="Muro da Cidade por Tarso Bessa">
+        </p>
+        
+        <p>
+            <img src="../exercicios/img/imagem2.gif" 
+                alt="Intro Cod3r" height="342">
+        </p>
+        
+        <p class="circular">
+            <img src="../exercicios/img/imagem3.png" 
+                alt="Rio de Janeiro" height="342">
+        </p>
+        
+        <!-- Atributo 'align' nao existe mais no HTML5, 
+            como solução ajustar via CSS algo como 
+            'float: left'
+        -->
+        <p class="texto">
+            <img src="../exercicios/img/avatar.jpg" 
+                alt="avatar" height="50">
+                Texto koaksdkao lorem ipsum dolor sit amet lorem ipsum dolor sit am
+                lorem ipsum dolor sit amet lorem ipsum dolor sit
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat reprehenderit, 
+                officiis est atque recusandae blanditiis asperiores culpa maxime optio perspiciatis 
+                unde ex doloremque illum vitae pariatur molestias libero! Illo, fuga.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio, 
+                assumenda? Quae magnam ipsa in quos quaerat, numquam eum dignissimos sed 
+                ratione eius libero, iure tempora nobis quam. Blanditiis, illo sint?
+        </p>
+        
+        <!-- Atribuindo imagem via CSS -->
+        <p class="cidade"></p>
+        
+        <p>
+            <!-- Permite colocar varias imagens dependendo do 
+                tamanho da tela do dispositivo-->
+            <picture>
+                <source srcset="../exercicios/img/logo-larga.png"
+                    media="(min-width: 600px)">
+                <img srcset="../exercicios/img/logo-estreita.png"
+                    alt="Logo">
+            </picture>
+        </p>
+</div>
+
+<style>
+    h2 {
+        padding-top: 30px;
+    }
+
+    .paragrafoSlider {
+        display: none;
+        position: absolute;
+    }
+
+    #div2{
+        margin-top: 450px;
+    }
+
+    .circular {
+        width: 513px;
+        background-color: #444;
+    }
+
+    .texto {
+        width: 400px;
+    }
+
+    .texto img {
+        margin-right: 10px;
+        float: left;     
+    }
+    
+    .cidade {
+        width: 513px;
+        height: 342px;
+        background-image: url('../exercicios/img/imagem4.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 200%;  /*Zoom na imagem*/
+    }
+</style>
+
+
+<!-- Script que gerencia o slider
+    - Funciona só se abrir diretamente o arquivo html.
+    - Pelo http-server nao funcionou scripts do javascript com o ajax
+ -->
+<script>
+    function mover(elem, inicio, fim, passo, callback){
+        const novoInicio = inicio - passo
+        if(novoInicio >= fim){
+            elem.style.left = novoInicio + 'px'
+            setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7)
+        } else{
+            callback()
+        }
+    }
+
+    // Teste com uma imagem
+    // const p = document.querySelector('[wm-slider] > p')
+    // p.style.display = 'block'
+    // mover(p, 1500, -520, 5, () => {
+    //     console.log("Terminou!!!");
+    // })
+
+    function slider(){
+        const elementos = document.querySelectorAll('[wm-slider] > p')
+        const slides = Array.from(elementos)
+        exibirSlide(slides, slides[0])
+    }
+
+    function exibirSlide(slides, slide){
+        slide.style.display = 'block'
+
+        const inicio = innerWidth
+        const fim = -slide.clientWidth
+
+        slide.style.left = `${inicio}px`
+
+        mover(slide, inicio, fim, 5, () => {
+            slide.style.display = 'none'
+            exibirSlide(slides, getProximo(slides, slide))
+        })
+    }
+
+    function getProximo(lista, atual){
+        const i = lista.indexOf(atual) + 1
+        return i < lista.length ? lista[i] : lista[0]
+    }
+
+    slider()
+</script>
