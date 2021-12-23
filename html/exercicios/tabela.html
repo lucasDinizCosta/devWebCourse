@@ -1,0 +1,60 @@
+<h1>Tabela</h1>
+<table>
+    <caption>Produtos</caption>
+    <thead> <!-- Cabeçalho da tabela = Nao obrigatorio mas ajuda na semantica -->
+        <tr> <!-- Table row - Linha -->
+            <th>Produto</th> <!--Table Head -->
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody> <!-- Corpo da tabela -->
+        <tr>
+            <td>iPad</td>
+            <td>3289,00</td>
+            <td>5</td>
+            <td>16445,00</td>
+        </tr>
+        <tr>
+            <td>Samsung S9</td>
+            <td>2649,00</td>
+            <td>8</td>
+            <td>21192,00</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <!-- <td colspan="3" rowspan="2">Total</td> -->
+            <td colspan="3">Total</td>
+            <td>37637,00</td>
+        </tr>
+        <!-- <tr>
+            <td>teste</td>
+        </tr> -->
+    </tfoot>
+</table>
+
+<style> 
+    table {
+        border-collapse: collapse;
+    }
+
+    th, td {   /*Aplica em th e td*/
+        padding: 10px;
+    }
+    
+    thead tr {  /*tr que está dentro de thead*/
+        border-bottom: 3px solid #444;
+    }
+
+    tbody tr:hover {
+        background-color: #dedede;
+    }
+
+    tfoot {
+        background-color: #444;
+        color: #fff;
+        font-weight: bold;
+    }
+</style>

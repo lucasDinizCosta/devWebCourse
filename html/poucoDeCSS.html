@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Um pouco de CSS</title>
+    <link rel="stylesheet" href="poucoDeCSS.css">
+    <style>
+      /* tag */
+      h1 {
+        font-size: 30px;
+      }
+
+      /* classe */
+      .fundoVermelho {
+          background-color: #C00;/*rgb(255,0,0);*/
+      }
+
+      /* identificador */
+      #textoPrincipal {
+          font-size: 40px;
+          font-weight: bold;
+          color: #fff;
+          padding: 10px;
+          background-color: #444;
+          margin-bottom: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS</h1>
+    <!-- id: identificador unico para cada elemento no html, serve para identificá-lo -->
+    <!-- class: atributo relativo a classe de estilos -->
+    <span id="textoPrincipal"></span>>Texto 1</span><br><br><br>
+    <span class="fundoVermelho negrito">Texto 2</span><br><br>
+    <!-- wm-atrib: atributo personalizado -->
+    <span class="fundoVermelho" wm-atrib>Texto 3</span>
+
+    <!-- no console: 
+        document.querySelector('.fundoVermelho') 
+        => retorna um elemento que tem a classe determinada
+        document.querySelectorAll('.fundoVermelho') 
+        => retorna TODOS os elementos que tem a classe determinada
+        document.querySelector('#textoPrincipal') 
+        => retorna o elemento que tem o ID determinado
+        document.querySelector('[wm-atrib]') 
+        => retorna o elemento que tem o atributo 'wm-atrib'
+    -->
+  </body>
+</html>

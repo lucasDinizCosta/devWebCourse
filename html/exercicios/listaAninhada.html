@@ -1,0 +1,54 @@
+<h1>Lista Aninhada<br></h1>
+<h1>Projeto</h1>
+<ul class="tree">
+    <li>
+        <span wm-folder>backend</span> 
+        <ul>
+            <li>
+                <span wm-folder>app</span>
+                <ul>
+                    <li>produto.js</li>
+                    <li>usuario.js</li>
+                    <li>venda.js</li>
+                </ul>
+            </li>
+            <li>
+                <span wm-folder>config</span>
+                <ul>
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span wm-folder>frontend</span>
+        <ul>
+            <li>
+                <span wm-folder>public</span>
+                <ul>
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>index.css</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+<!-- Link do css: 
+    http://files.cod3r.com.br/curso-web/tree.css
+-->
+<link rel="stylesheet" href="../exercicios/tree.css">
+
+<script>
+    document.querySelectorAll('[wm-folder]').forEach(folder => {
+        console.log("Teste");
+        folder.onclick = function(e){
+            // Pega o elemento que está depois
+            const ul = folder.nextElementSibling
+            const displayAtual = ul.style.display
+            ul.style.display = displayAtual === 'none' ? 'block' : 'none'
+        }
+    })
+</script>
