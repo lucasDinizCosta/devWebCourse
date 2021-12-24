@@ -5,12 +5,43 @@
     <meta charset="UTF-8">
     <title>Anatomia CSS</title>
     <style>
-        /* ... */
+        .seletor {
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            /* múltiplos valores */
+            border: solid 5px navy; /* shorthand property*/
+            font-family: Helvetica, monospace, sans-serif;  /* Alternativas de fontes*/
+            /* funções */
+            width: calc(100% - 40px);
+            background-color: rgb(34, 153, 189)
+        }
+
+        /* Usando uma pseudo-classe*/
+        .seletor:hover { /*Acontece algo quando o mouse passa por cima*/
+            background-color: orangered;
+        }
+
+        /* Usando um pseudo-elemento */
+        .seletor::first-letter{
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        /*
+            padrão dash-case de nomenclatura:
+            - Separando por hifen as palavras.
+            ex: font-size
+            dash-case ou camelCase? tanto faz desde que
+            tenha consistência e não ficar mudando toda hora
+
+            - É case-sensitive
+        */
     </style>
 </head>
 
 <body>
-    <div class="selector">Conteúdo</div>
+    <div class="seletor">Conteúdo</div>
 </body>
 
 </html>

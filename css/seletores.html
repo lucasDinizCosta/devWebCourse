@@ -6,7 +6,113 @@
     <title>CSS Selectors</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        /* Seletor universal */
+        /* * {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /* Seletor de classe */
+        /* .tag {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /* Seletor de IDs */
+        /* #aprovados {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /* Dentro de aprovados pegar o elemento 
+        div aninhado(Descendente direto - Filho direto) */
+        /* #aninhado > div{
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /* Qualquer Descendente de aninhado*/
+        /* #aninhado section{
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /* Seletor de irmãos */
+        /* p + ul {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /* Seletor de irmãos mais geral */
+        /* p ~ ol {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /* Seletor de propriedades ou atributos */
+        /* [feira] {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /* Seletor de atributo (Somente 1 
+        atributo na propriedade)*/
+        /* [feira=casa] {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /* Seletor de atributo (Não importa se tem 
+        mais de 1 atributo na propriedade
+        -- Separado por espaço e nao virgulas
+        )*/
+        /* [feira~=escritorio] {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /* Seletor de atributo - se o atributo apresenta
+        determinados caracteres no nome
+        )*/
+        /* [feira*=sa] {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /* Seletor de Filhos
+
+            'span:nth-child(1) {' => Alguem que o
+            o 1º filho seja um SPAN
+
+            -- o label pode atrapalhar na seleção, neste caso,
+            foi adicionado um nolabel no section
+        */
+        
+        /* span:nth-child(1) {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /* Seletores de filhos - impares */
+        /* section > :nth-child(odd) {
+            color: #ff0;
+            background-color: #f77;
+        }  */
+
+        /* Seletores de filhos - pares */
+        /* section > :nth-child(even) {
+            color: #ff0;
+            background-color: #fDD;
+        }  */
+
+        /* Seletores de tipos */
+        /* -- Segundo elemento dentro da section que
+            representa um span
+         */
+        section > span:nth-of-type(2) {
+            color: #ff0;
+            background-color: #7f7;
+        } 
     </style>
 </head>
 
@@ -29,7 +135,7 @@
             </ol>
             <div id='aninhado' class='tag'>
                 <div class="tag">
-                    <section class='tag'>
+                    <section class='tag nolabel'>
                         <span class='tag'>1</span>
                         <p class='tag'>2</p>
                         <span class='tag'>3</span>
