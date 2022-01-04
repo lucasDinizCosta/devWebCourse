@@ -5,9 +5,15 @@
     <meta charset="UTF-8">
     <title>Altura e Largura</title>
     <style>
+        html {
+            height: 100%;
+        }
+
         body {
             font-size: 40px;
             background-color: coral;
+            height: 100%;
+            margin: 0;
         }
 
         div {
@@ -16,6 +22,21 @@
 
         span {
             background-color: dodgerblue;
+        }
+
+        div, span {
+            width: 50%;
+            /* Funciona e aumenta o tamanho do body junto */
+            height: 250px;
+            /* Nao vai funcionar pois já ocupa o tamanho do body todo */
+            /* Contudo se o pai body e o avô aumentarem a altura, vai funcionar */
+            /* OBSERVACAO: Se o tamanho for em % ele vai considerar o parent 
+            como referencia */
+            height: 50%; 
+
+            /* Altura nao afeta quando for 'inline' */
+
+            display: block;
         }
     </style>
 </head>

@@ -5,7 +5,48 @@
     <meta charset="UTF-8">
     <title>Especificidade CSS</title>
     <style>
-        /* https://specificity.keegan.st/ */
+        /* 
+            Calculadora que mostra as especificidades 
+            do elementos CSS:
+            https://specificity.keegan.st/ 
+        */
+        /* 
+            Ordem de especificidade:
+            1. Inline
+            2. ID
+            3. Classe, Pseudo-Classe, atributo
+            4. Elemento, Pseudo-Elementos
+
+            ---------------------------
+            Sobre o código abaixo:
+            1 - 2 => Mesmo nivel de especificidade,
+            prioridade de quem aparecer depois
+            3 - 4 - 5 => Especificidade maior que 1 - 2 
+            mas 3 - 4 - 5 apresentam o mesmo nivel de especificidade,
+            prioridade de quem aparecer depois
+            6 => Especificidade de ID e é maior 
+            que 3 - 4 - 5 independente da posição no código
+            7 => Especificidade maior que o ID independente da posição no código
+         */
+
+         /* 1 */
+         body { font-size: 40px;}
+        /* 2 */
+         div {
+             background-color: #00B;
+             color: #fff;
+         }
+
+         /* 3 */
+         div[wm-cor]{background-color: darkorange;}
+        /* 4 */
+         div:hover {background-color: purple;}
+         /* 5 */
+         div.estilo { background-color: green;}
+         /* 6 */
+         #unico1, #unico2 { background-color: #000;}
+         /* 7 */
+         div:hover, #unico1:hover { background-color: purple;}
     </style>
 </head>
 

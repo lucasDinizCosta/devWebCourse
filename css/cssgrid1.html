@@ -22,6 +22,72 @@
             border: solid 5px dodgerblue;
             background: #fff;
         }
+
+        body {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            /* 
+                O repeat representa um fragmento repetido da tracklist, permitindo que um 
+                número maior de colunas que exibem um padrão fixo seja escrito de forma mais 
+                compacta.
+                Simplificando, o repeat vai repetir um padrão especificado um número x de vezes.
+                Por exemplo, quando ele faz grid-template-columns: repeat(4, 8.33% 8.33% 8.33%); 
+                quer dizer que serão três colunas que ocuparão 8.33% da tela, repetido quatro 
+                vezes, o que gera 12 colunas ocupando 8.33% do espaço total.
+                Você pode fazer diretamente, usando grid-template-columns: repeat(12, 8.33%); 
+                que dá o mesmo resultado.
+            */
+            /* 3x4 = 12 colunas com 8.33% do width */
+            grid-template-columns: repeat(4, 8.33% 8.33% 8.33%);
+            /* 4 colunas com 8.33% do width */
+            grid-template-columns: repeat(4, 8.33%);
+            /* 12 colunas com 8.33% do width */
+            grid-template-columns: repeat(12, 8.33%);
+            /* 12 colunas com 100px do width */
+            grid-template-columns: repeat(11, 100px) 100px;
+            /* colunas variam de 100px a 300px */
+            /*minmax(100px, 300px)*/
+            /* 200px, 20% do width da tela, 1fr => 1 fragmento do que sobrou*/
+            grid-template-columns: 200px 20% 1fr;
+            /* 12 fragmentos: 1ª => 3fr, 2ª => 6fr, 3ª => 3fr */
+            grid-template-columns: 3fr 6fr 3fr;
+            /* 4 linhas com height definido em % */
+            grid-template-rows: 50% 25% 12.5% 12.5%;
+            /* 1 linha 100px 2 linha Restante: se ajusta pro 
+            tamanho necessário*/
+            grid-template-rows: 100px 1fr;
+            /* 1 linha com 100px o resto divide de forma igualitaria */
+            grid-template-rows: 100px auto;
+            grid-template-rows: 100px auto auto auto;
+        }
+
+        .d8 {
+            grid-column-start: 2;
+            grid-column-end: 4;
+            /* Começa na coluna 2 e da um span de 2 casas */
+            grid-column-end: span 2;
+            /* Começa na linha 3 e termina na linha 5 */
+            grid-row-start: 3;
+            grid-row-end: 5;
+            /* Começa na linha 2 e da um span de 2 casas */
+            grid-row-end: span 2;
+        }
+
+        .d10,
+        .d11 {
+            /* podem se sobrepor as grids
+               e elementos ficarem mais abaixo ou acima
+            */
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 5;
+            grid-row-end: span 1;
+        }
+
+        .d10{
+            /* Elemento 10 vai pra frente do 11 no eixo Z */
+            z-index: 10;
+        }
     </style>
 </head>
 

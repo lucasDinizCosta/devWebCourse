@@ -5,7 +5,35 @@
     <meta charset="UTF-8">
     <title>Box Model</title>
     <style>
-        /* ... */
+        /* 
+            margin: distancia entre elementos
+            padding: distancia do elemento até a borda
+        */
+        body {
+            font-size: 80px;
+            /* por padrao os navegadores tem uma margin 
+            de 08px */
+            margin: 0;
+        }
+        .c1 { background-color: orange; }
+        .c2 { background-color: skyblue; }
+        .c3 { background-color: tomato; }
+
+        div {
+            /* perde o conceito de bloco*/
+            float: left;
+            /* padding é computado dentro da largura 
+            e altura do componente */
+            padding-top: 100px;
+            /* Aplica em: top right bottom left */
+            padding: 10px 50px 100px 150px;
+            /* Aplica em: vertical horizontal*/
+            padding: 100px 50px;
+            /* Aplica em todas as direções */
+            padding: 50px;
+            margin: 0px 20px;
+            border: solid 15px black;
+        }
     </style>
 </head>
 

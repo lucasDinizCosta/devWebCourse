@@ -11,18 +11,38 @@
 
         .c1 {
             background-color: red;
+            float: right;
         }
 
         .c2 {
             background-color: green;
+            clear: right;
+            float: left;
         }
         
         .c3 {
             background-color: blue;
+            clear: both;
         }
 
         .c4 {
             background-color: orange;
+            float: right;
+        }
+
+        div {
+            width: 150px;
+            height: 150px;
+
+            /* float: Muda o posicionamento dos elementos de maneira flutuante. 
+                float: right; => Os elementos são posicionados a partir de right
+                float: left; => Os elementos são posicionados a partir de left
+
+                clear: propriedade que limpa a propriedade float e faça com que os outros
+                elementos passem a considerar o posicionamento float dos outros
+                clear: right;  => Limpa o float right e faz o elemento considerar float right
+                clear: both;  => Limpa o float de left e right
+            */
         }
     </style>
 </head>

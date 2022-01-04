@@ -4,8 +4,34 @@
     <meta charset="UTF-8">
     <title>Tamanho Box</title>
     <style>
+        /* Aplicando a propriedade box-sizing pra todos os elementos */
+        /*
+        
+        * {
+            box-sizing: border-box;
+        } 
+        
+        */
+
         body {
             font-size: 45px;
+        }
+
+        div {
+            background-color: deepskyblue;
+            width: 100%;
+            height: 300px;
+            padding: 100px;
+            border: 20px solid;
+
+            box-sizing: border-box;
+
+            /* Box-sizing: é uma propriedade que define se a borda e o padding serão limitados
+            juntos ao 'width' do componente se a opção for 'border-box', e deste modo, 
+            não ultrapassando o tamanho da página. Já se a opção for 'content-box' significa que 
+            o conteúdo vai ocupar 100% da viewport do elemento e continuara a borda e padding ultra
+            passando o tamanho da pagina*/
+            /* => box-sizing não é propagado por herança */
         }
     </style>
 </head>

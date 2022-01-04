@@ -6,7 +6,60 @@
     <title>Flexbox #01</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        /* Flexbox é unidimensional 
+           CSSGrid é bidimensional com linhas e colunas,
+           é muito usado para organizar o layout macro da aplicação
+        */
+        div {
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+            margin: 5px;
+        }
+
+        .big {
+            font-size: 1.5em;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            /* inverte a ordem da coluna */
+            flex-direction: column-reverse;
+            /* inverte a ordem da linha */
+            flex-direction: row-reverse;
+            /* propriedade padrao */
+            flex-direction: row;
+            width: 50%;
+            height: 200px;
+            /* Quebra a linha */
+            flex-wrap: wrap;
+            flex-wrap: wrap-reverse;
+            flex-flow: row wrap;
+            flex-flow: column-reverse wrap;
+            flex-flow: row wrap;
+
+            justify-content: flex-start;
+            justify-content: flex-end;
+            justify-content: center;
+            justify-content: space-around;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+
+            /* Cross Axis */
+            height: 400px;
+            align-items: stretch;
+            align-items: baseline;
+            align-items: flex-start;
+            align-items: flex-end;
+            align-items: center;
+
+            /* mais de uma linha */
+            align-content: flex-start;
+            align-content: flex-end;
+            align-content: center;
+            align-content: space-around;
+            align-content: space-between;
+        }
     </style>
 </head>
 

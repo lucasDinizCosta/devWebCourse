@@ -5,7 +5,65 @@
     <meta charset="UTF-8">
     <title>Unidades #01</title>
     <style>
-        /* ... */
+        /* 
+            =======> Unidades:
+            -----------------
+
+            => Unidades Absolutas:
+            px: É o tamanho em pixel. Lembrando que não é o pixel respectivo a tela utilizada,
+            mas sim é passado por um processo de normalização.
+            cm: É o tamanho em centímetros.
+            mm: É o tamanho em milímetros.
+            ===> Entre outras unidades
+
+            -----------------
+
+            => Unidades de viewport:
+            vh: A tela tem a altura divida em 100 partes e vh é 1/100 da altura
+            vw: A tela tem a largura divida em 100 partes e vw é 1/100 da largura
+            vmin: menor distancia na tela, se for a largura menor, será vmin, se for a altura
+            será vmin.
+            vmax: maior distancia na tela, se for a largura maior, será vmax, se for a altura
+            será vmax.
+            ---> vmin e vmax mudam dependendo do tamanho da janela do browser
+
+            -----------------
+
+            => Unidades em fonte:
+            ---> Também é possível utilizar unidades absolutas pra fonte.
+            rem: Tamanho relativo a fonte raiz de alto nível da aplicação.
+            em: Tamanho relativo ao tamanho da fonte do pai da tag.
+
+            ----------------
+
+            => Unidades de caso especial:
+            %: É especial pois pode variar com a dimensão da tela, dimensão do pai e da viewport
+        */
+
+        .unidades-absolutas {
+            position: absolute;
+            font-size: 40px;
+            padding: 20px;
+            border: solid 5px #222;
+            margin: 30px;
+            width: 4cm; /* pouco usado */
+            height: 20mm; /* pouco usado */
+            /* top, left requerem position absolute */
+            top: 150px;
+            left: 200px;
+        }
+
+        .unidades-relativas {
+            position: absolute;
+            font-size: 4em;
+            padding: 5%;
+            border: solid 1vw #222;
+            margin: .8%;
+            width: 20vw;
+            height: 15vh;
+            bottom: 5%;
+            right: 5%;
+        }
     </style>
 </head>
 

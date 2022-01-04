@@ -6,11 +6,47 @@
     <title>Cores</title>
     <style>
         /* 
+            -- Mostra o padrão HSL de cores
             https://www.w3schools.com/colors/colors_hsl.asp
             
+            -- Mostra as melhores que combinam com um padrão
             https://coolors.co/
             http://paletton.com/
+
         */
+
+        body {
+            background-color: green;
+            /* Utilizando o padrão hexadecimal =>  # FF FF FF */
+            background-color: #f67809;
+            /* Replica 2x o a, 2x o b e 2x o c*/
+            background-color: #abc; 
+            /* Adiciona transparencia a partir do 912=> 00 -> transparencia completa; 
+            FF -> sem transparencia */
+            background-color: #edc91280;  
+            background-color: #e928;  
+            /* RGB: É um padrão que trabalha na base decimal variando de 0 - 255 
+               => Função RGB do CSS
+            */
+            background-color: rgb(55, 110, 220);
+            /* RGBA: É um padrão que trabalha na base decimal variando de 0 - 255 nas cores e 
+               o ultimo varia a transparência
+               => Função RGBA do CSS
+               Transparência varia de 0 a 1:
+               0 => Totalmente transparente;   ---  1 => Sem transparencia
+            */
+            background-color: rgba(55, 110, 220, 0.5);
+
+            /* hsl: hue, saturation e lightness 
+                hue: 0 - 360 => espectro de cor;
+                saturation: 0%(escala de cinza) - 100%(cor mais forte possivel) => saturação;
+                lightness: 0% (Fica escuro) - 100% (Fica branco)  => luz; 
+                          // 50% é a cor mais pura possível
+            */
+            background-color: hsl(299, 58%, 50%);
+            /* hsla: HSL + A (Transparencia) */
+            background-color: hsla(299, 58%, 50%, 0.5)
+        }
     </style>
 </head>
 

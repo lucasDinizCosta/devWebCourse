@@ -5,7 +5,37 @@
     <meta charset="UTF-8">
     <title>Display</title>
     <style>
-        /* ... */
+        /* inline-block: Pode acontecer de criar uma linha entre menus como no arquivo 
+        'index.html'. Isso se dá por conta da existência de um caractere em branco entre 
+        as duas nav de elementos, para resolver e remover essa linha, bastaria de adicionar
+        ao final de um nav, já iniciar outra nav na mesma linha*/
+        body {
+            font-size: 40px;
+            color: #fff;
+            background-color: coral;
+        }
+
+        ul { padding: 0;}
+        div { background-color: seagreen;}
+        span { background-color: dodgerblue;}
+        li { background-color: purple;}
+
+        div, span, li {
+            width: 50%;
+            width: 200px;
+            height: 80px;
+            padding-top: 30px;
+            text-align: center;
+            /* elementos em linha separada */
+            /* display: block; */
+
+            /* Elementos na mesma linha */
+            /* desconsidera altura e largura */
+            /* display: inline; */
+
+            /* considera altura e largura */
+            display: inline-block
+        }
     </style>
 </head>
 
