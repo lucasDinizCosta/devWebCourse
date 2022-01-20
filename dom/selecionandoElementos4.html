@@ -23,6 +23,40 @@
     </div>
     <script>
         // ...
+        function log(){
+            console.log(this)
+        }
+        // Adicionando uma nova função em elementos raiz do javascript/html
+        HTMLCollection.prototype.log = log
+        HTMLElement.prototype.log = log
+        NodeList.prototype.log = log
+        Node.prototype.log = log
+
+        const lista = document.querySelector('div ul')
+        lista.parentNode.log()
+        lista.childNodes.log()
+        /*
+            Possivel efeito colateral do uso do childnodes:
+            -- Os caracteres de quebra de linha entre as tags
+            entrarão na lista, para que isso nao ocorre basta juntar
+            elas na mesma linha ou... tentar outro método '.children'
+        */
+
+        const primeiro = lista.firstChild // Traz o texto
+        primeiro.log()
+        primeiro.nextSibling.log()
+
+        const ultimo = lista.lastChild
+        ultimo.log()
+        ultimo.previousSibling.log()
+
+        lista.children.log()
+        lista.firstElementChild.log() // Traz a tag HTML
+        lista.lastElementChild.log()
+        lista.parentNode.previousElementSibling.log() // Pega o irmao anterior
+        lista.parentNode.nextElementSibling.log() // Pega o irmao posterior
+
+        document.querySelectorAll('div ul li').log()
     </script>
 </body>
 

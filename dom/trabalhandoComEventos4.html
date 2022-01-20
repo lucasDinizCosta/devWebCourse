@@ -31,6 +31,39 @@
         <button wm-submit>Pesquisar</button>
     </form>
     <script>
-        // ...
+        // Primeira jeito de fazer
+        // => Pelo onclick do botao
+
+        // const submit = document.querySelector('[wm-submit]');
+        // submit.onclick = function(e){
+        //     e.preventDefault();
+
+        //     const form = e.target.parentNode
+        //     const formData = new FormData(form)
+        //     formData.append('ajax', true)
+        //     console.log(formData.get('q'));
+        //     console.log(formData.get('hl'));
+
+        //     for (let dado of formData) {
+        //         console.log(dado);
+        //     }
+        // }
+
+        // Segundo jeito de fazer
+        // => Pelo onsubmit do formulario
+        const form = document.forms[0]
+        form.onsubmit = function(e){
+            e.preventDefault();
+
+            const form = e.target
+            const formData = new FormData(form)
+            formData.append('ajax', true)
+            console.log(formData.get('q'));
+            console.log(formData.get('hl'));
+
+            for (let dado of formData) {
+                console.log(dado);
+            }
+        }
     </script>
 </body>

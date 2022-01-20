@@ -10,7 +10,23 @@
     <div>Segundo</div>
     <div class="terceiro ultimo">.terceiro .ultimo</div>
     <script>              
-        // ...
+        // Pegando elemento via ID
+        document.getElementById("primeiro").classList.add('destaque')
+
+        // Pega todos os elementos pela TAG
+        const divs = document.getElementsByTagName('div')
+        // 1 - Transformando HTMLCollection em Array
+        Array.from(divs).forEach(e => e.classList.remove('destaque'))
+
+        // 2 - Transformando HTMLCollection em Array
+        const divsArray = [...divs]
+        divsArray.forEach(e => e.classList.add('destaque'))
+
+        // Pega elementos pela CLASSE
+        const ultimosElementos = document.getElementsByClassName('ultimo')
+        for(let e of ultimosElementos) {
+            e.classList.remove('destaque')
+        }
     </script>
 </body>
 </html>

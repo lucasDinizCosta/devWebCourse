@@ -31,7 +31,20 @@
         <button>Pesquisar</button>
     </form>
     <script>
-        // ...
+        // Traz um Array com todos os formularios 
+        // em formato de HTMLCollection
+        console.log(document.forms)
+        console.log(document.forms[0])
+        console.log(document.getElementsByName('pesquisa'))
+        // Retorna o elemento com o nome de 'pesquisa'
+        console.log(document.pesquisa)
+        // Retorna o elemento com o nome de 'q' dentro 
+        // do elemento 'pesquisa'
+        console.log(document.pesquisa.q)
+        // Alterando o texto do formulario
+        document.pesquisa.q.value = 'Linux Brasil'
+        document.pesquisa.hl.value = 'en-us'
+        console.log(document.pesquisa.hl.selectedIndex);
     </script>
 </body>
 
