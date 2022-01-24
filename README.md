@@ -12,19 +12,21 @@
 - Ferramentas Online:
   - repl.it
   - jsfiddle
-- Editor de texto(VSCode, Atom,...)
-- Browser(Chrome, Firefox, Brave,...)
-- Node(Muito usado no backend)
+- Editor de texto (VSCode, Atom,...)
+- Browser (Chrome, Firefox, Brave,...)
+- Node (Muito usado no backend)
 ### Extensões:
 - CodeRunner: Permite rodar comandos javascript pelo VSCode
 
 ## Comandos:
-- `npm init ` ou `yarn init` ==> Inicializa o projeto node na pasta atual, caso tenha o arquivo `package.json` será feita a instalação de todas as dependências seja com o NPM ou o YARN, caso o arquivo não exista, ele será criado.
-- `npm init NomePacote` ou `yarn add NomePacote` ==> Instala um pacote no projeto através do NPM ou do YARN.
-- `npm update NomePacote` ou `yarn upgrade NomePacote` ==> Atualiza um pacote no projeto.
-- `npm remove NomePacote` ou `yarn remove NomePacote` ==> Remove um pacote do projeto
-- `npm start` ==> Inicializa o servidor local com o NPM ou YARN.
-- `npm run dev` ==> Roda a aplicação em modo de desenvolvimento('dev') executando o módulo que está no package.json na linha `"dev": `.
+- `npm init`(`npm i`) ou `yarn init`(`yarn i`) $\Rightarrow$ Inicializa o projeto node na pasta atual, caso tenha o arquivo `package.json` será feita a instalação de todas as dependências seja com o NPM ou o YARN, caso o arquivo não exista, ele será criado.
+- `npm install NomePacote` ou `yarn add NomePacote` $\Rightarrow$ Instala um pacote no projeto através do NPM ou do YARN.
+  - OBS: Instalando de **maneira global** no node, ou seja, todos os projetos no computador terão acesso
+    - `npm install -g NomePacote`
+- `npm update NomePacote` ou `yarn upgrade NomePacote` $\Rightarrow$ Atualiza um pacote no projeto.
+- `npm remove NomePacote` ou `yarn remove NomePacote` $\Rightarrow$ Remove um pacote do projeto
+- `npm start` $\Rightarrow$ Inicializa o servidor local com o NPM ou YARN.
+- `npm run dev` $\Rightarrow$ Roda a aplicação em modo de desenvolvimento ('dev') executando o módulo que está no package.json na linha `"dev": `.
 
 ### Dependências importantes do Node:
 - **Axios**: É um **client HTTP**. É ideal para fazer e interceptar requisições REST(GET, PUT,...). Faz requisições para obter informações de algo que está remoto. O Axios é baseado em **Promises** do javascript, ou seja, tem-se um promessa de que as requisições trarão uma informação e caso for satisfeita, será tratado os dados conforme o programador tenha solicitado. Ao utilizar promessas, o Axios pode fazer requisições de maneira assíncrona com base no `async` e o `await`.
@@ -48,8 +50,8 @@
 - **HTTP-Server**: Pacote que possibilita criar um servidor HTTP local para node.
   - Instalação: `npm i http-server`
   - Execução: 
-    - `http-server .` ==> '.' representa a pasta atual
-    - `http-server -P 9090 .` ==> '.' diretorio atual na porta '9090'
+    - `http-server .` $\Rightarrow$ '.' representa a pasta atual
+    - `http-server -P 9090 .` $\Rightarrow$ '.' diretorio atual na porta '9090'
   - Desabilita o cache para atualizar a página ao salvar o arquivo: `http-server -c-1 .`
 - **Body-Parser**: Serve para trabalhar com dados vindos do cliente, recebendo e trabalhando com JSON. Pega o padrão **URLENCODE** do body da requisição e trata como um JSON.
   - Instalação: `npm i --save body-parser`
@@ -79,10 +81,10 @@
     - WebPack
   - Utiliza os Streams do Node.js pra escrever os arquivos diretamente no disco.
   - Plugins:
-    - **GULP-UGLIFY** => Serve para minificar arquivos usando o UGLIFY.js
-    - **GULP-CONCAT** => Concatena arquivos em um único arquivo.
+    - **GULP-UGLIFY** $\Rightarrow$ Serve para minificar arquivos usando o UGLIFY.js
+    - **GULP-CONCAT** $\Rightarrow$ Concatena arquivos em um único arquivo.
       - Exemplo: Junta todos os arquivos .js em um arquivo único.
-    - **GULP-IMAGEMIN** => Otimiza imagens PNG, JPG, GIF e SVG.
+    - **GULP-IMAGEMIN** $\Rightarrow$ Otimiza imagens PNG, JPG, GIF e SVG.
   - No arquivo **GULPFILE.js** estarão as tarefas que o programador deseja que o GULP automatize.
   - funções principais:
     - `gulp.task(name, fn)`: Irá registrar a função com um nome, podendo especificar uma dependencia caso uma tarefa seja necessario rodar antes dela.
