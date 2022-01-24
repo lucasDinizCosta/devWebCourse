@@ -71,3 +71,23 @@
   - Ajax (acrônimo em língua inglesa de <em>**A**synchronous **J**avascript **a**nd **X**ML</em>, em português "Javascript Assíncrono e XML") é o uso metodológico de tecnologias como Javascript e XML, providas por navegadores, para tornar páginas Web mais interativas com o usuário, utilizando-se de solicitações assíncronas de informações.
   - A **XMLHttpRequest** (XHR) tem um papel importante na técnica de desenvolvimento web Ajax para se comunicar com os scripts do lado do servidor. Mais recentemente foi lançado o **Fetch API**, que possui funcionalidade semelhante ao XHR com linguagem em mais alto nível.
   - Com o AJAX da pra trabalhar com JSON também. Resumidamente, o AJAX é voltado para trabalhar com requisições assíncronas de maneira mais eficiente.
+- O que é **GULP**?
+  - Gulp.js é uma ferramenta de automatização de tarefas em JavaScript. Tarefas como minificar, otimizar e compilar arquivos, tão repetitivas e necessárias ao desenvolvimento, podem ser automatizadas com o Gulp.
+  - É usado principalmente no contexto Frontend. Trabalha com plugins ideal para cada cenário.
+  - Ferramentas similares:
+    - GRUNT;
+    - WebPack
+  - Utiliza os Streams do Node.js pra escrever os arquivos diretamente no disco.
+  - Plugins:
+    - **GULP-UGLIFY** => Serve para minificar arquivos usando o UGLIFY.js
+    - **GULP-CONCAT** => Concatena arquivos em um único arquivo.
+      - Exemplo: Junta todos os arquivos .js em um arquivo único.
+    - **GULP-IMAGEMIN** => Otimiza imagens PNG, JPG, GIF e SVG.
+  - No arquivo **GULPFILE.js** estarão as tarefas que o programador deseja que o GULP automatize.
+  - funções principais:
+    - `gulp.task(name, fn)`: Irá registrar a função com um nome, podendo especificar uma dependencia caso uma tarefa seja necessario rodar antes dela.
+    - `gulp.run(tasks...)`: Executa todas as tarefas com o máximo de simultaneidade.
+    - `gulp.watch(glob, fn)`: Observa os arquivos indicados e quando uma alteração for feita, o gulp executará novamente a função.
+    - `gulp.src(glob)`: Retorna um 'Readable Stream', ou seja, um Stream liberado para a leitura. Basicamente carrega os arquivos.
+    - `gulp.dest(folder)`: Retorna um 'Writable Stream', ou seja, um Stream liberado para a escrita. Basicamente a pasta de destino onde serão salvos os arquivos.
+    - 
