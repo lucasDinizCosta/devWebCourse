@@ -14,6 +14,29 @@
     <div id="post"></div>
 
     <script>
-        // ...
+        function exibirResultado(id, dados){
+            const texto = JSON.stringify(dados)
+            document.getElementById(id).innerHTML = texto
+        }
+        // Requisição do tipo GET da função 'parOuImpar'
+        
+        // Alternativa 01
+        // axios('parOuImpar?numero=8').then(resp => exibirResultado('get', resp.data))
+
+        // Alternativa 02
+        axios.get('parOuImpar', {
+            params: {
+                numero: 5
+            }
+        }).then(resp => exibirResultado('get', resp.data))
+
+        // -----------
+
+        // Requisição do tipo POST
+        axios.post('formulario', {
+            nome: 'João',
+            sobrenome: 'Silva',
+        }).then(resp => exibirResultado('post', resp.data))
+
     </script>
 </body>

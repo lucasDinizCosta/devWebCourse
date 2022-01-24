@@ -5,6 +5,9 @@
     <meta charset='UTF-8'>
     <title>Ajax com jQuery</title>
     <link rel='stylesheet' href='css/estilo.css'>
+
+    <!-- IMPORTAÇÃO DO JQUERY -->
+
     <script src="js/jquery.js"></script>
 </head>
 
@@ -14,6 +17,40 @@
     <div id="post"></div>
 
     <script>
-        // ...
+        function exibirResultado(id, dados){
+            const texto = JSON.stringify(dados)
+            document.getElementById(id).innerHTML = texto
+        }
+
+        // Para referenciar o JQuery:
+        // 1 => $
+        // 2 => jQuery
+
+        // Requisição GET
+        $.ajax({
+            url: 'parOuImpar',
+            data: {
+                numero: 5
+            },
+            success(data) {
+                exibirResultado('get', data)
+            }
+        })
+
+        // Requisição POST
+        $.ajax({
+            url: 'formulario',
+            method: 'post',
+            data: {
+                nome: 'João',
+                sobrenome: 'Silva',
+            },
+            success(data){
+                exibirResultado('post', data)
+            },
+            error(e){
+                exibirResultado('post', e)
+            }
+        })
     </script>
 </body>

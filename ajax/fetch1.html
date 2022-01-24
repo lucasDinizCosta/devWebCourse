@@ -11,6 +11,18 @@
     <h1>Estados</h1>
 
     <script>
-        // ...
+        // Fetch API é uma forma moderna de trabalhar com o AJAX
+        // É nativa dos navegadores, logo nao precisa de frameworks
+        
+        const url = 'dados/estados.json'
+        // Retornará uma promise
+        fetch(url)
+            .then(resp => resp.json()) // passa os dados do JSON
+            .then(estados => {
+                const itens = estados.reduce(
+                    (html, estado) => html + `<li>${estado.nome}</li>`, ''
+                )
+                document.body.insertAdjacentHTML('beforeend', `<ul>${itens}</ul>`)
+            })
     </script>
 </body>

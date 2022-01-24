@@ -11,6 +11,48 @@
     <h1>Estados</h1>
 
     <script>
-        // ...
+        // Pegando arquivos diretamente de XML
+        
+        function ajax(config){
+            const xhr = new XMLHttpRequest();
+            xhr.open(config.metodo, config.url, true)
+
+            // Evento chamado toda vez que o status da requisição mudar
+            xhr.onreadystatechange = e => {
+                if(xhr.readyState === 4){
+                    if(xhr.status === 200){
+                        // Respondendo ao XML
+                        // A resposta vai ser um objeto montado com os dados do XML
+                        config.sucesso(xhr.responseXML)
+                    } else if(xhr.status >= 400){
+                        config.erro({
+                            config:xhr.status,
+                            texto: xhr.statusText
+                        })
+                    }
+                }
+            }
+
+            xhr.send()
+        }
+
+        ajax({
+            url: "dados/estados.xml",
+            metodo: "get",
+            sucesso(resposta) {
+                const estados = resposta.getElementsByTagName("estado");
+                const itens = Array.from(estados).reduce(
+                    // 'html' é o acumulador da função reduce
+                    // acumula os elementos da lista de estados na variavel 'html'
+                    // Acumulador iniciando como vazio
+                    (html, estado) => html + `<li>${estado.attributes.nome.value}</li>`, ''
+                )
+                document.body.insertAdjacentHTML('beforeend', `<ul>${itens}</ul>`)
+            },
+            erro(e){
+                const msg = document.createTextNode(`${e.codigo}: ${e.texto}`)
+                document.body.appendChild(msg)
+            }
+        })
     </script>
 </body>

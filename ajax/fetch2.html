@@ -29,6 +29,47 @@
     </form>
     <div id="resultado"></div>
     <script>
-        // ...
+        document.usuarioForm.onsubmit = async e => {
+            e.preventDefault();
+
+            const form = e.target
+            const data = new FormData(form)
+            data.append('ajax', true)
+
+            const options = {
+                method: form.method,    // Obtém o metodo pelo formulario ==> POST no caso
+                body: new URLSearchParams(data)
+            }
+
+            const resultado = document.getElementById('resultado')
+
+            // Alternativa 01 ==> Usando Promises
+
+            // fetch(form.action, options)
+            //     .then(resp => resp.json())
+            //     .then(json => {
+            //         resultado.innerHTML = JSON.stringify(json)
+            //     })
+            //     .catch(
+            //         // Trata erros caso o 'action' do formulario seja diferente
+            //         e => {
+            //             // Adiciona a identificacao do erro no HTML
+            //             // Cuidado: Pois pode revelar informações demais para o usuário
+            //             // inclusive podendo ser informações críticas
+            //             resultado.innerHTML = e
+            //     })
+
+
+            // Alternativa 02 ==> Usando Async/await
+
+            try {
+                const resp = await fetch(form.action, options)
+                const json = await resp.json()
+                resultado.innerHTML = JSON.stringify(json)
+            }
+            catch(e){
+                resultado.innerHTML = e
+            }
+        }
     </script>
 </body>
