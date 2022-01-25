@@ -18,7 +18,7 @@
 ### Extensões:
 - CodeRunner: Permite rodar comandos javascript pelo VSCode
 
-## Comandos:
+## Comandos do NPM ou Yarn:
 - `npm init`(`npm i`) ou `yarn init`(`yarn i`) ==> Inicializa o projeto node na pasta atual, caso tenha o arquivo `package.json` será feita a instalação de todas as dependências seja com o NPM ou o YARN, caso o arquivo não exista, ele será criado.
 - `npm install NomePacote` ou `yarn add NomePacote` ==> Instala um pacote no projeto através do NPM ou do YARN.
   - OBS: Instalando de **maneira global** no node, ou seja, todos os projetos no computador terão acesso
@@ -27,6 +27,10 @@
 - `npm remove NomePacote` ou `yarn remove NomePacote` ==> Remove um pacote do projeto
 - `npm start` ==> Inicializa o servidor local com o NPM ou YARN.
 - `npm run dev` ==> Roda a aplicação em modo de desenvolvimento ('dev') executando o módulo que está no package.json na linha `"dev": `.
+
+## Comandos do GULP:
+- `gulp --version` ==> Exibe a versão instalada do gulp e do CLI (**C**ommand **L**ine **I**nterface).
+- `gulp` ==> Executa o gulp via terminal a partir do arquivo fundamental chamando `gulpfile.js`.
 
 ### Dependências importantes do Node:
 - **Axios**: É um **client HTTP**. É ideal para fazer e interceptar requisições REST(GET, PUT,...). Faz requisições para obter informações de algo que está remoto. O Axios é baseado em **Promises** do javascript, ou seja, tem-se um promessa de que as requisições trarão uma informação e caso for satisfeita, será tratado os dados conforme o programador tenha solicitado. Ao utilizar promessas, o Axios pode fazer requisições de maneira assíncrona com base no `async` e o `await`.
@@ -86,9 +90,19 @@
       - Exemplo: Junta todos os arquivos .js em um arquivo único.
     - **GULP-IMAGEMIN** ==> Otimiza imagens PNG, JPG, GIF e SVG.
   - No arquivo **GULPFILE.js** estarão as tarefas que o programador deseja que o GULP automatize.
+  - *Além disso o GULP necessita que instale o* **CLI(LINHA DE COMANDO NO TERMINAL)** *dele*:
+    - Comando: `npm install -g gulp-cli` ==> Instalado de maneira global
   - funções principais:
     - `gulp.task(name, fn)`: Irá registrar a função com um nome, podendo especificar uma dependencia caso uma tarefa seja necessario rodar antes dela.
     - `gulp.run(tasks...)`: Executa todas as tarefas com o máximo de simultaneidade.
     - `gulp.watch(glob, fn)`: Observa os arquivos indicados e quando uma alteração for feita, o gulp executará novamente a função.
     - `gulp.src(glob)`: Retorna um 'Readable Stream', ou seja, um Stream liberado para a leitura. Basicamente carrega os arquivos.
     - `gulp.dest(folder)`: Retorna um 'Writable Stream', ou seja, um Stream liberado para a escrita. Basicamente a pasta de destino onde serão salvos os arquivos.
+- O que é o **Babel** em Javascript?
+  - É uma plataforma ou framework que permite compilar e testar o javascript do 'futuro', ou seja, com as mais novas funcionalidades lançadas, em outras palavras, é muito útil para testar codigos de javascript e ter como resultado o mesmo código mas adaptado para executar na maioria dos browsers.
+    - link: https://babeljs.io/
+- O que é **TypeScript**?
+  - Tudo que é suportado no JavaScript é suportado no TypeScript. o TypeScript é um superconjunto de javascript pois no final o código será convertido pra javascript para poder ser executado com mais facilidade nos navegadores e outras plataformas.
+  - O core do TypeScript seria possibilitar definir tipos no JavaScript, ou seja, uma linguagem tipada.
+- O que é **SASS**?
+  - É um pré-processador CSS, com isso, permite adicionar novas funcionalidade aos CSS que nao está presente no padrão e através disso permite criar arquivos CSS com maior nível de reúso.
