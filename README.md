@@ -106,3 +106,11 @@
   - O core do TypeScript seria possibilitar definir tipos no JavaScript, ou seja, uma linguagem tipada.
 - O que é **SASS**?
   - É um pré-processador CSS, com isso, permite adicionar novas funcionalidade aos CSS que nao está presente no padrão e através disso permite criar arquivos CSS com maior nível de reúso.
+- O que é **Webpack**?
+  - Apresenta uma finalidade similar ao GULP no sentido de minificar arquivos e realizar tarefas, contudo, a diferença é que o GULP trabalha com TASKs, ou seja, tarefas a serem executadas e utiliza o padrão PIPE para executar as tarefas, já o **webpack é diferente pois trabalha com módulos**.
+  - **<u>Importante</u>**: O Webpack apresenta <u>um **módulo de entrada**</u> nas configurações e só vai conseguir chegar em outros módulos somente se tiver `import` seja no módulo principal ou nos subsequentes.
+    - O mesmo vale para imagens, arquivos de texto, fontes, CSS e afins... O loader irá reclamar se nao tiver importado em algum lugar.
+  - Padrão de módulos:
+    - CommonsJS: O node se baseia neste modulo, com module.exports e toda a configuração.
+    - webpack: Padrão oficial da linguagem, implantado no ECMAScript 2015. Este sistema de modulos é baseado em `port` e `exports`.
+  - O webpack apresenta um sistema de `loader`, o que significa que dependendo da extensão do arquivo ele vai aplicar um tipo de lógica para renderizar aquele arquivo.
