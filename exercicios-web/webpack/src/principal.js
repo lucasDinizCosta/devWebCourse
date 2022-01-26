@@ -6,7 +6,7 @@
 // ==> NODEJS nao reconhecer o 'import'
 import Pessoa from './pessoa'
 // import './modulos/moduloA'
-import './assets/css/estilo.css'
+import './assets'   // importa o arquivo 'assets/index.js'
 
 const atendente = new Pessoa
 console.log(atendente.cumprimentar());
