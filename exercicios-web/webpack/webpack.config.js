@@ -14,6 +14,10 @@ module.exports = {
         filename: 'principal.js',
         path: __dirname + '/public'
     },
+    devServer: {
+        contentBase: "./public",
+        port: 9000
+    },
     optimization: {
         minimizer: [
             new TerserPlugin({
@@ -40,6 +44,9 @@ module.exports = {
                 'css-loader', // interpreta @import, url()...
                 'sass-loader',
             ]
+        }, {
+            test: /\.(png|svg|jpg|gif|jpeg)$/,
+            use: ['file-loader']
         }]
     }
 }

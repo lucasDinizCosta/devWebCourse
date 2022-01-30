@@ -1,6 +1,7 @@
 ## Comandos interessantes:
 
 - `npm start && node public/principal.js` ==> Executa o node inicializando o webpack e ao final executa o código gerado na pasta `public/principal.js`
+- `webpack-dev-server` ==> É um webserver voltado para o desenvolvimento e não a produção. O Objetivo dele é atualizar os arquivos da build a medida que forem atualizados
 
 ## Erros
 - `webpack@"^5.1.0" from terser-webpack-plugin@5.3.0`:
