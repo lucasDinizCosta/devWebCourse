@@ -64,6 +64,17 @@
 ### Programas:
 - **POSTMAN**: É um programa que possibilita fazer requisições **REST(GET, PUT,...)** de maneira mais fácil. Muito útil para testar requisições ao servidor tanto local quando já hospedado online.
 
+<div style="color: #F88">
+<h2>Erros Comuns</h2>
+</div>
+
+- `Module build failed: ModuleBuildError: Module build failed: Error: Node Sass version 7.0.1 is incompatible with ^4.0.0.`
+  - A dependência **node-sass** foi descontinuada, contudo, a dependência atual é o **sass**
+    - `npm uninstall node-sass` => Desinstalando o node-sass;
+    - `npm install sass` => Instalando o sass;
+  - Caso mesmo assim deseja-se instalar o node-sass:
+    - `npm install node-sass@(your version)`
+    - De preferência usar a versão "7.0.1" que é a última e pode ser ter uma compatibilidade melhor com o nodejs atual.
 ## Anotações:
 - **ECMAScript**: É o nome formal da linguagem Javascript. Javascript é uma linguagem fracamente tipada(tipagem dinâmica).
 - Tipagem forte: É quando atribuído um tipo para a variável não poderá ser mudado.
