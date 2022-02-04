@@ -13,13 +13,36 @@
     <div id='conteudo'></div>
 
     <script>
-        const pessoas = [
-            { nome: 'Ana', nota: 9.1 },
-            { nome: 'Bianca', nota: 8.4 },
-            { nome: 'Carlos', nota: 7.6 },
-            { nome: 'Julia', nota: 9.7 }
-        ]
-        
-        // ...
+        // Forma de executar o script depois 
+        // que a página estiver pronta
+
+        // Forma 1:
+        $(function(){
+            const alunos = [
+                { nome: 'Ana', nota: 9.1 },
+                { nome: 'Bianca', nota: 8.4 },
+                { nome: 'Carlos', nota: 7.6 },
+                { nome: 'Julia', nota: 9.7 }
+            ]
+
+            const linhas = alunos.map(aluno => {
+                const tdNome = $('<td>').html(aluno.nome)
+                const tdNota = $('<td>').html(aluno.nota)
+                // Transformando o objeto do javascript em elemento DOM
+                // do JQuery
+                // return  $('<tr>').append(tdNome).append(tdNota)
+                return $('<tr>').append(tdNome, tdNota)
+                // return $('<tr>').append([tdNome, tdNota])
+            })
+
+            const tabela = $('<table>').append(linhas)
+                    .css('border', '5px solid')
+            $('#conteudo').append(tabela)
+        })
+
+        // Forma 2
+        // $(document).ready(function(){
+            
+        // })
     </script>
 </body>

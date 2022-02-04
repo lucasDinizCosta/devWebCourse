@@ -22,6 +22,30 @@
     </div>
 
     <script>
-        // ...
+        // const $ = {nome: 'Não é o jQuery!'}
+
+        // Protegendo a variavel cifrao $ do JQuery
+        // Garante que $ => apontará para o jQuery
+        (function($){
+            $.fn.interpretar = function() {
+                const retirarChaves = s => s.substring(2, s.length - 2)
+                const conteudo = $(this).html()
+                const expressoesComChaves = conteudo.match(/\{\{.+\}\}/g)
+                const expressoes = expressoesComChaves.map(retirarChaves)
+                const resultado = expressoes.map(e => eval(e))
+
+                let conteudoFinal = conteudo
+                for(let i = 0; i < expressoesComChaves.length; i++){
+                    conteudoFinal = conteudoFinal.replace(
+                        expressoesComChaves[i], resultado[i]
+                    )
+                }
+                $(this).html(conteudoFinal)
+                // para poder encadear o plugin com outras chamadas
+                return this
+            }
+        })(jQuery)
+
+        $('div').interpretar()
     </script>
 </body>
