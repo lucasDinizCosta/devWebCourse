@@ -1,0 +1,10 @@
+// '~' ==> Procura dentro da pasta node_modules
+@import "~bootstrap/scss/bootstrap";
+
+// Sobreescrevendo uma variavel do SASS para onde irá
+// encontrar as fontes
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+
+@import "custom";
+
