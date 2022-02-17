@@ -135,4 +135,109 @@
   - Bootstrap.css é um framework CSS que organiza e gerencia o layout de um site. É um framework que tem uma grande quantidade de estilos e funcionalidades voltadas para o CSS.
   - A framework depende do JQuery.
   - Opções de instalação: (Via NPM, Via site, Via CDN(pega de um servidor de alto desempenho na entrega de arquivos estáticos ao invés de deixar no próprio servidor)
+- [**React**](exercicios-web/react/README.md):
+  - O React é uma biblioteca(framework) JavaScript de código aberto com foco em criar interfaces de usuário em páginas web. É mantido pelo Facebook, Instagram, outras empresas e uma comunidade de desenvolvedores individuais.
+  - A ideia principal do React é trabalhar por meio de componentes(visando facilitar a manutenibilidade do código e leitura) podendo serem feitos tanto em typescript quanto em javascript.
+  - O React tem sido usado por grandes companhias ao redor do mundo. Algumas delas: Netflix, Airbnb, American Express, Facebook, WhatsApp, eBay e Instagram. Essa é a prova de que a ferramenta tem um número de vantagens que não têm nem comparação nos seus competidores.   
+  - O React geralmente utiliza a extensão **JSX** que combina o javascript com elementos HTML ou **TSX** relativo ao typescript.
+  - **Observação 01**: Todos os componentes criados pelo usuário DEVEM ter o nome iniciado por LETRA MAIÚSCULA. O nome do arquivo nao precisa mas o nome do componente sim.
+  ```JSX
+  // O Componente Pai será renderizado corretamente
+  import Pai from './componentes/Pai'
+
+  // Contudo já nesse caso 'filho' não sera reconhecido corretamente
+  import filho from './componentes/Filho'
+  ```
+  - **Observação 02**: Não é possível retornar mais de uma tag no mesmo componente sem uma tag de fechamento, contudo, podemos contornar esta situação utilizando um array de elementos, uma div, uma tag vazia ou usando o `React.Fragment`.
+  ```JSX
+  // Por array 
+  export default props => [
+      <h1 key='h1'>Bom dia {props.nome}!</h1>,
+      <h2 key='h2'>Até breve!</h2>
+  ]   
+
+  // Por div ==> Pode ter o layout do componente mudado dependendo do CSS, então, cuidado!
+  export default props => 
+    <div>
+      <h1>Bom dia {props.nome}!</h1>
+      <h2>Até breve!</h2>
+    </div>
+  
+  // Por tag vazia 
+  export default props => 
+    <>
+      <h1>Bom dia {props.nome}!</h1>
+      <h2>Até breve!</h2>
+    </>
+  
+  // Por React.Fragment
+  // Envolve os elementos e nao ocupa espaço no DOM
+  export default props => 
+    <React.Fragment>
+      <h1>Bom dia {props.nome}!</h1>
+      <h2>Até breve!</h2>
+    <React.Fragment/>
+  ```
+  - **Observação 03**: Para retornar mais de uma tag através de um ARRAY deve ter o atributo **key** identificando cada elemento dele.
+  ```JSX
+  // Para trabalhar com array neste modelo, no react é necessario adicionar 
+  // key pra cada elemento
+  export default props => [
+      <h1 key='h1'>Bom dia {props.nome}!</h1>,
+      <h2 key='h2'>Até breve!</h2>
+  ]   
+  ```
+  - Tipos de componentes:
+    - Funcional: É uma função que retorna um elemento JSX
+      ```JSX
+      import React from 'react'
+
+      // Componente baseado em função
+      export default () =>
+          <h1>Primeiro</h1>
+      ```
+    - de Classe: É uma classe de um objeto que, diferentemente do funcional, pode apresentar estados,  métodos de ciclo de vida (Chamar um trecho de código antes de um componente ser renderizado, Chamar um trecho de código quando o componente for destruído,...).
+      - **Observação**: Quando é um componente de classe, a classe criada herdará os métodos e atributos do `Component` do React, e portanto, deve-se importa-lo também.
+       
+      ```JSX
+      import React, { Component } from 'react'
+
+      // Componente baseado em classe
+      export default class Saudacao extends Component {
+        render(){
+          const {tipo, nome} = this.props // Desestrutura e retira os atributos nome e tipo das propriedades
+          return (
+            <div>
+              <h1>{tipo} {nome}!</h1>
+              <hr/>
+            </div>
+          )
+        }
+      }
+      ```
+        - Os atributos presente no props NAO PODEM ser alterados se não forem STATE, logo ocasionará em um erro caso isso for feito: `TypeError: Cannot assign to read only property 'tipo' of object '#<Object>'`('tipo' presente em props)
+          ```JSX
+          // Alternativas para criar um state
+          // (01)
+          state = {
+            tipo: "Fala",
+            nome: "Pedro"
+          }
+
+          this.setState({tipo: "Tchau", nome: "João"})  // Sobreescreve os valores do state
+          // ou somente o tipo
+          this.setState({tipo: "Tchau"})  
+          // ou somente o nome
+          this.setState({nome: "João"})  
+
+          // (02)
+          import { useState } from 'react';
+
+          // Define o estado e a função que a altera o estado
+          const [myLinks, setMyLinks] = useState([])    // Estado de array
+          const [data, setData] = useState({})          // Estado de objeto
+          const [showModal, setShowModal] = useState(false) // Estado de booleano
+          const [emptyList, setEmptyList] = useState(false)
+
+          ```
  
