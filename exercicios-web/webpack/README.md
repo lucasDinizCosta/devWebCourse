@@ -8,7 +8,7 @@
   - Opte por instalar a versão 4.2.3
   - `npm i -s terser-webpack-plugin@4.2.3`
 
-## Atualização
+## Atualização:
 
 Por motivos de incompatibilidade de versões, a biblioteca UglifyJs não está suportando ES6. Podemos resolver esse problema trocando a biblioteca pela **Terser**, que empenhará o mesmo papel.
 
@@ -16,13 +16,11 @@ Por motivos de incompatibilidade de versões, a biblioteca UglifyJs não está s
    
 `npm install terser-webpack-plugin --save-dev`
 
-
-1. Em **webpack.config.js**. Importe a lib:
+2. Em **webpack.config.js**. Importe a lib:
 
 ```Javascript
 const TerserPlugin = require('terser-webpack-plugin')
 ```
-
 3. Em optimization, apague o seguinte trecho de código:
 
 ```Javascript
@@ -38,7 +36,6 @@ E remova o import de UglifyJsPlugin
 // Remover
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 ```
-
 
 1. Por fim, em plugins. Declare:
 
