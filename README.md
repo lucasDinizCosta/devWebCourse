@@ -140,7 +140,12 @@
   - A ideia principal do React é trabalhar por meio de componentes(visando facilitar a manutenibilidade do código e leitura) podendo serem feitos tanto em typescript quanto em javascript.
   - O React tem sido usado por grandes companhias ao redor do mundo. Algumas delas: Netflix, Airbnb, American Express, Facebook, WhatsApp, eBay e Instagram. Essa é a prova de que a ferramenta tem um número de vantagens que não têm nem comparação nos seus competidores.   
   - O React geralmente utiliza a extensão **JSX** que combina o javascript com elementos HTML ou **TSX** relativo ao typescript.
-  - **Observação 01**: Todos os componentes criados pelo usuário DEVEM ter o nome iniciado por LETRA MAIÚSCULA. O nome do arquivo nao precisa mas o nome do componente sim.
+  - Dependências importantes:
+    - **Axios**: Axios é um cliente HTTP baseado em Promises para fazer requisições REST(PUT, GET,...). Pode ser utilizado tanto no navegador quanto no Node.js ou qualquer serviço de API.
+    - **react-router**: Estabelece a navegação entre os componentes.
+    - **react-router-dom**: O redirecionamento é utilizando o elemento Redirect da biblioteca do react-router-dom. Com ele podemos fazer um redirecionamento de forma declarativa, como se fosse um componente.
+    - **font-awesome**: Fonte de ícones e textos. Bem util para as aplicações.
+  - **Observação 01**: Todos os componentes criados pelo usuário **DEVEM** ter o nome iniciado por **LETRA MAIÚSCULA**. O nome do arquivo nao precisa mas o nome do componente sim.
   ```JSX
   // O Componente Pai será renderizado corretamente
   import Pai from './componentes/Pai'
@@ -215,7 +220,7 @@
         }
       }
       ```
-        - Os atributos presente no props NAO PODEM ser alterados se não forem STATE, logo ocasionará em um erro caso isso for feito: `TypeError: Cannot assign to read only property 'tipo' of object '#<Object>'`('tipo' presente em props)
+        - Os atributos presente no props **NAO PODEM** ser alterados se não forem **STATE**, logo ocasionará em um erro caso isso for feito: `TypeError: Cannot assign to read only property 'tipo' of object '#<Object>'`('tipo' presente em props)
           ```JSX
           // Alternativas para criar um state
           // (01)
@@ -240,4 +245,12 @@
           const [emptyList, setEmptyList] = useState(false)
 
           ```
- 
+        - Diferença entre o `BrowserRouter` e `HashRouter` ambos podem ser utilizados para estabelecer as rotas entre os componentes e paginas da aplicação, contudo, o `BrowserRouter` estabelece a url de navegação muito igual aos sites sem o hash '#':
+          - http://localhost:3000/
+          - http://localhost:3000/users
+          - http://localhost:3000/home
+        Já o `HashRouter` adiciona um hash '#' na url meio que identificando a raiz da página:
+          - http://localhost:3000/#
+          - http://localhost:3000/#/users
+          - http://localhost:3000/#/home
+        Utilizar o BrowserRouter para a build em produção pode requerer alguns ajustes nas rotas principalmente quando for utilizado um servidor apache ou outros, já o HashRouter não, ele identifica a raiz da pagina sendo '/#' e identifica todas as rotas.
