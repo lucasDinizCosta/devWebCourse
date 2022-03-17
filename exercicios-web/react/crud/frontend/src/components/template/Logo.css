@@ -9,3 +9,12 @@ aside.logo img {
     padding: 0 15px;
     width: 100%;
 }
+
+/* Adicionando responsividade */
+
+/* para celulares */
+@media(max-width: 576px){
+    aside.logo img {
+        width: 350px;
+    }
+}
