@@ -254,3 +254,15 @@
           - http://localhost:3000/#/users
           - http://localhost:3000/#/home
         Utilizar o BrowserRouter para a build em produção pode requerer alguns ajustes nas rotas principalmente quando for utilizado um servidor apache ou outros, já o HashRouter não, ele identifica a raiz da pagina sendo '/#' e identifica todas as rotas.
+- [**VueJS**](exercicios-web/vuejs/README.md):
+  - É um framework muito usado, contudo não é mantido por uma empresa como ReactJS-Facebook e AngularJS-Google, logo é mantido pela própria comunidade.
+  - É um framework JavaScript open source para a criação de aplicações web, criado por Evan You em 2014. O Vue.js possibilita criar aplicações de forma reativa. O Vue.js faz a utilização de um DOM virtual, o que faz com que seja extremamente performático na maioria das situações. Além disso, conta com uma arquitetura muito bem estruturada por meio da criação de componentes reusáveis.
+  - Este framework é muito utilizado para criar aplicações **SPA (Single Page Applications)** e também para desenvolver vários outros tipos de interfaces, com foco na interação e experiência do usuário. Atualmente e não à toa, o Vue.js está entre os frameworks Javascript para criação de interfaces mais populares do mundo, devido à sua baixa curva de aprendizado, sua versatilidade e por oferecer uma solução bem completa – contando até mesmo com uma CLI(linha de comando), o Vue CLI.
+  - Principais características: 
+    - Progressividade; 
+    - Reatividade: Sua arquitetura visual que muda cada vez que tem uma mudança de estado, ou seja, o HTML vai ser atualizado toda vez que o valor de uma variável ou componente em vueJS for alterado.
+    - **Extensões e utilitários importantes** para facilitar o trabalho com o vue:
+      - **Vue DevTools**(Para Browsers): Ajuda a inspecionar e depurar as aplicações em uma interface mais amigável.
+      - **Quasar**: É uma solução para cross-plataform usando o vue.
+        - https://quasar.dev/
+      - **Vuetify**: É uma framework auxiliar do Vue voltada para auxiliar com materiais de design de interfaces
