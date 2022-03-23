@@ -7,9 +7,41 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="exercicio">
+    <div id="app">
+        <p>{{ link }}</p>
+        <p><a href="{{ link }}">Canal?</a></p>
+        <p><a v-bind:href="link">Canal</a></p>
+        <!-- 
+            v-bind: É uma diretiva que cria uma amarração que permite passar as variaveis 
+            do vue no data para parametros de tags HTML
+         -->
+        <!-- Forma reduzida de fazer Bind -->
+        <p><a :href="link">Canal</a></p>
 
+        <!-- v-model: Faz uma atualização em duas direções
+            ou bind bidirecional.
+            Vai atualizar a variavel e o campo de texto juntos
+         -->
+        <p>
+            <input type="text" v-model="nome"><br>
+            <span>{{ nome }}</span>
+        </p>
+    </div>
     <script>
-        // ...
+        new Vue({
+            el: "#app",
+            data: {
+                nome: "Maria",
+                link: "https://youtube.com/cod3rcursos"
+            },
+            // Observa as alterações em atributos do data e faz a função que for descrita abaixo
+            watch: {
+                // Sempre que o nome for alterado, essa funcao vai ser chamada
+                nome(novoValor){
+                    console.log(novoValor.toUpperCase());
+                }
+            }
+        })
     </script>
 </body>
 </html>
