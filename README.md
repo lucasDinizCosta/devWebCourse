@@ -266,3 +266,4 @@
       - **Quasar**: É uma solução para cross-plataform usando o vue.
         - https://quasar.dev/
       - **Vuetify**: É uma framework auxiliar do Vue voltada para auxiliar com materiais de design de interfaces
+  - Geralmente a partir de um trecho de html como uma 'div' por exemplo, o vue pode ser responsável e controlar a renderização e comportamento daquele elemento desde que associe um <i>Vue Instance</i> ao trecho de html e logo este trecho será controlado pelo Vue.
