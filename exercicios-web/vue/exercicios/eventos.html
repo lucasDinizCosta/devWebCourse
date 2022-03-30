@@ -7,9 +7,62 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="exercicio">
+    <div id="app">
+        <p>{{ contador }}</p>
+        <p>
+            <!-- 
+                v-on: Diretiva responsável por fazer o binding de um 
+                método na hora que ocorrer o evento.
+                @: Atribui um evento ao elemento, mesma coisa que o v-on.
 
+                Modificadores de Eventos:
+                - stop: Para de monitorar o evento
+                - prevent: Para o evento e impede o comportamento padrão
+                - capture: Captura o evento
+
+                Modificadores de eventos de tecla:
+                - key-up: Quando a tecla é solta
+                - key-down: Quando a tecla é pressionada
+                
+            -->
+            <!-- Jeito 1 de se fazer: -->
+            <button v-on:click="add">+1</button>
+            <!-- Jeito 2 de se fazer(Faz a mesma coisa): -->
+            <button @click="contador -= 2">-2</button>
+        </p>
+        <p @mousemove="atualizarPosicao">
+            Coordenadas: {{x}} e {{y}}
+            <!-- Jeito 1 -->
+            <!-- <span @mousemove.stop>Aqui Não!</span> -->
+            <!-- Jeito 2 -->
+            <span @mousemove="stop">Aqui Não!</span>
+        </p>
+        <input type="text" @keyup.enter="alerta">
+    </div>
     <script>
-        // ...
+        new Vue({
+            el: '#app',
+            data: {
+                x: 0,
+                y: 0,
+                contador: 0
+            },
+            methods: {
+                add(){
+                    this.contador++
+                },
+                atualizarPosicao(e){
+                    this.x = e.clientX;
+                    this.y = e.clientY;
+                },
+                stop(e){
+                    e.stopPropagation();
+                },
+                alerta(){
+                    alert('Enter!');
+                }
+            }
+        })
     </script>
 </body>
 </html>
