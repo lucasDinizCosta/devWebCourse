@@ -56,6 +56,11 @@ export default {
                 this.values[0] = eval(
                     `${this.values[0]} ${currentOperation} ${this.values[1]}`
                 )
+                // Bug de Not a Number e Infinity
+                if (isNaN(this.values[0]) || !isFinite(this.values[0])) {
+                    this.clearMemory()
+                    return
+                }
             } catch (error) {
                 this.$emit('onError', error)
             }
