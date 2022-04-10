@@ -1,10 +1,11 @@
 # MUDANÇAS IMPORTANTES:
+* O projeto da Cod3r foi feito utilizando o Vue 2.0 e fiz na versão 3.0, portanto, é por isso que há essas diferenças na implementação.
 * Troquei o nome da classe para app2 pois a div padrão app do vue por 
 algum motivo nao esta sobre-escrevendo. Caso deixe o mesmo nome 'app', haverá duas divs com o mesmo nome e portanto, ao atribuir as propriedades do CSS abaixo do gradiente de fundo, ficará estranho.
   * ![alt](./imgs-Readme/0-app-nao-sobreescreve.PNG)
 * ERRO multi-word-name-component:
   * ![alt](./imgs-Readme/1-multi-word-name-component.PNG)
-  * dado o erro que os elementos devem apresentar nome composto, tive que mudar os nomes que foram instituidos no curso da Cod3r ficando da seguinte forma:
+  * dado o erro que os elementos devem apresentar nome composto, tive que mudar os nomes que foram instituídos no curso da Cod3r ficando da seguinte forma:
     * Button ===> ButtonElement
     * Display ===> DisplayScreen
     * Calculator ==> CalculatorDevice
