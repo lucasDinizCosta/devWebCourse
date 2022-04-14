@@ -1,6 +1,10 @@
 # Curso Web Moderno Completo com Javascript - 2021
-## Link de acesso:
+## Links:
+### Curso da Cod3r:
 - url: https://www.udemy.com/course/curso-web
+
+### Aplicações desenvolvidas:
+- Seção 30: Aplicação Desktop com Javascript, ElectronJS e VueJS - Most Used Words - https://github.com/cod3rcursos/youtube/tree/master/most-used-words
 
 ## VSCode:
 
@@ -265,5 +269,23 @@
       - **Vue DevTools**(Para Browsers): Ajuda a inspecionar e depurar as aplicações em uma interface mais amigável.
       - **Quasar**: É uma solução para cross-plataform usando o vue.
         - https://quasar.dev/
-      - **Vuetify**: É uma framework auxiliar do Vue voltada para auxiliar com materiais de design de interfaces
+      - **Vuetify**: É uma biblioteca de componentes auxiliar do Vue voltada materiais de design de interfaces.
   - Geralmente a partir de um trecho de html como uma 'div' por exemplo, o vue pode ser responsável e controlar a renderização e comportamento daquele elemento desde que associe um <i>Vue Instance</i> ao trecho de html e logo este trecho será controlado pelo Vue.
+- **API REST**:
+  - Representational State Transfer (**REST**), em português Transferência Representacional de Estado, é um estilo de arquitetura de software que define um conjunto de restrições a serem usadas para a criação de web services (serviços Web). Os Web services que estão em conformidade com o estilo arquitetural **REST**, denominados Web services **RESTful**, fornecem interoperabilidade entre sistemas de computadores na Internet. Os Web services **RESTful** permitem que os sistemas solicitantes acessem e manipulem representações textuais de recursos da Web usando um conjunto uniforme e predefinido de operações sem estado. Outros tipos de Web services, como Web services **SOAP**, expõem seus próprios conjuntos de operações arbitrários.
+  - Em um Web service **RESTful**, as solicitações feitas ao URI de um recurso provocará uma resposta com uma carga útil formatada em HTML, XML, JSON ou algum outro formato. A resposta pode confirmar que alguma alteração foi feita no recurso armazenado e a resposta pode fornecer links de hipertexto para outros recursos ou conjuntos de recursos relacionados. Quando o **HTTP** é usado, como é o mais comum, as operações (métodos **HTTP**) disponíveis são **GET, HEAD, POST, PUT, PATCH, DELETE, CONNECT, OPTIONS e TRACE**.
+- **Wordpress**:
+  - **WordPress** é um sistema livre e aberto de gestão de conteúdo para internet (do inglês: *Content Management System* - CMS), baseado em **PHP** com banco de dados **MySQL**, executado em um servidor interpretador, voltado principalmente para a criação de páginas eletrônicas (sites) e blogs online.
+  - É uma das ferramentas mais utilizadas para conteúdo na web, disputando com o serviço do Google, chamado Blogger. No entanto, o WordPress é adotado por aqueles que queiram uma página com maior personalização e recursos diferenciais.
+  - O WordPress possui um sistema de modelos, através de um processador de modelos. O usuário pode re-organizar o layout através de widgets sem precisar editar códigos PHP ou HTML; eles também podem instalar e alternar entre temas WordPress. Os códigos PHP e HTML dos temas também podem ser editados para adicionar funcionalidades personalizadas.
+- **SEO (Search Engine Optimization) - Otimização para motores de busca**:
+  - Otimização de Sites (otimização para motores de pesquisa ou otimização para mecanismos de busca é o conjunto de estratégias com o objetivo de potencializar e melhorar o posicionamento de um site nas páginas de resultados orgânicos - desconsiderando links patrocinados/pagos - nos sites de busca gerando conversões, sejam elas, um lead, uma compra, um envio de formulário, agendamento de consulta e outros.
+- **GatsbyJS**:
+  - É uma framework escrita em JavaScript e React, cuja proposta é ajudar desenvolvedores a construir aplicações e websites de forma facilitada. O foco do Gatsby é proporcionar um desenvolvimento rápido, efetivo e performático, acima de tudo.
+  - A forma que ele funciona consiste em três etapas. Primeiro, você tem o Data Source, que é basicamente a fonte desses dados que você vai entregar pra construir o web site ou uma aplicação, como um blog, por exemplo.
+  - E, depois, vem o processo de building, onde ele vai incorporar todo HTML, JavaScript e CSS que são necessários para compilar sua aplicação, lendo em cima dessa fonte de dados e construir o site estático.
+  - O conceito do Gatsby é ler esses dados, construí-los de forma estática, criando um site estático, que é o que dá, de fato, essa performance para ele. Por fim, a terceira etapa é o Deploy, onde você entrega esses arquivos e os visualiza na web.
+- **Webflow**:
+  - Com esta plataforma qualquer cidadão comum ou desenvolvedor consegue criar experiências agradáveis para o consumidor final. Esta poderosa plataforma desenvolvida pela Amazon Web Services está ajudando centenas de empreendedores ao redor do mundo.
+  - Trata-se de uma proposta elaborada pela Amazon Web Services que permite construir sites responsivos sem a necessidade de ficar digitando linhas de código intermináveis, o Webflow faz com que o site seja adaptado para diferentes tamanhos de telas, que podem ser desktops, tablets e smartphones. 
+- **ElectronJS**: Possibilita a criação de aplicações desktop Multiplataformas(MacOS, Linux, Windows, todos usando o mesmo código) usando as tecnologias da Web como Javascript, CSS e HTML. O VSCode, por exemplo, é feito em ElectronJS
