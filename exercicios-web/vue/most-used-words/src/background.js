@@ -21,7 +21,20 @@ async function createWindow() {
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION,
       contextIsolation: !process.env.ELECTRON_NODE_INTEGRATION
-    }
+    },
+  })
+  /**
+   * Agora já está na versão 13.
+   * No meu caso o que eu fiz para funcionar foi o seguinte:
+   * Como a função createWindow()já vem criada como async no arquivo background.js 
+   * e a chamada do win.loadURLé realizada com um await o registro do listener para 
+   * o evento 'did-finish-load' precisa ser feito antes da chamada do win.loadURL. 
+   * Ficando dessa forma:
+   */
+  win.webContents.on('did-finish-load', () => {
+    const { title, version } = require('../package.json')  
+    win.setTitle(`${title} :: v ${version}`)
+    console.log(`${title} :: v ${version}`)
   })
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
