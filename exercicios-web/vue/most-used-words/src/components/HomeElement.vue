@@ -19,7 +19,7 @@
 </template>
 
 <script>
-// import { ipcRenderer } from 'electron';
+import { ipcRenderer } from 'electron';
 import PillElement from './PillElement';
 
 export default {
@@ -41,10 +41,10 @@ export default {
             console.log(this.files);
 
             // Comunicação assincrona para receber arquivos e trabalhar em cima deles
-            // ipcRenderer.send('blabla', 'ping');
-            // ipcRenderer.on('blabla', (event, resp) => {
-            //     console.log(resp);
-            // })
+            ipcRenderer.send('blabla', 'ping');
+            ipcRenderer.on('blabla', (event, resp) => {
+                console.log(resp);
+            })
         }
     }
 }
