@@ -1,6 +1,5 @@
 {
   "name": "most-used-words",
-  "title": "Most Used Words",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -24,7 +23,7 @@
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
-    "electron": "^13.0.0",
+    "electron": "^5.0.0",
     "electron-devtools-installer": "^3.1.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
@@ -53,5 +52,6 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "title": "Most Used Words"
 }
