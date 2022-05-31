@@ -29,11 +29,7 @@ export default {
     data: function () {
         return {
             files: [],
-            groupedWords: [
-                { name: 'i', amount: 1234 },
-                { name: 'you', amount: 900 },
-                { name: 'he', amount: 853 },
-            ]
+            groupedWords: []
         }
     },
     methods: {
@@ -41,9 +37,11 @@ export default {
             console.log(this.files);
 
             // Comunicação assincrona para receber arquivos e trabalhar em cima deles
-            ipcRenderer.send('blabla', 'ping');
-            ipcRenderer.on('blabla', (event, resp) => {
-                console.log(resp);
+            const paths = this.files.map(f => f.path)
+            ipcRenderer.send('process-subtitles', paths)
+            ipcRenderer.on('process-subtitles', (event, resp) => {
+                // console.log(resp);
+                this.groupedWords = resp
             })
         }
     }
