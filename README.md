@@ -69,11 +69,44 @@
 - **POSTMAN**: É um programa que possibilita fazer requisições **REST(GET, PUT, POST, PATCH...)** de maneira mais fácil. Muito útil para testar requisições ao servidor tanto local quando já hospedado online.
 
 ## Anotações:
+
+#### Conceitos Gerais:
+- **API REST**:
+<details>
+  <summary>Clique aqui para expandir o conceito!</summary>
+
+- Representational State Transfer (**REST**), em português Transferência Representacional de Estado, é um estilo de arquitetura de software que define um conjunto de restrições a serem usadas para a criação de web services (serviços Web). Os Web services que estão em conformidade com o estilo arquitetural **REST**, denominados Web services **RESTful**, fornecem interoperabilidade entre sistemas de computadores na Internet. Os Web services **RESTful** permitem que os sistemas solicitantes acessem e manipulem representações textuais de recursos da Web usando um conjunto uniforme e predefinido de operações sem estado. Outros tipos de Web services, como Web services **SOAP**, expõem seus próprios conjuntos de operações arbitrários.
+  - Em um Web service **RESTful**, as solicitações feitas ao URI de um recurso provocará uma resposta com uma carga útil formatada em HTML, XML, JSON ou algum outro formato. A resposta pode confirmar que alguma alteração foi feita no recurso armazenado e a resposta pode fornecer links de hipertexto para outros recursos ou conjuntos de recursos relacionados. Quando o **HTTP** é usado, como é o mais comum, as operações (métodos **HTTP**) disponíveis são **GET, HEAD, POST, PUT, PATCH, DELETE, CONNECT, OPTIONS e TRACE**.
+</details>
+  
 - **Árvore de Componentes**: Serve para qualquer framework baseado em componentes(Angular, React, VueJS, Flutter, etc.).
 
 ![Árvore de Componentes](DicasUteis/arvoreDeComponentes.jpeg "Árvore de Componentes")
-- **Single-Page Application**: O html é gerado dinamicamente a partir do Javascript.
-- **Angular**: É um framework Javascript desenvolvido pelo Google para a criação de **aplicações web SPA(Single-Page Application)** baseada em **componentes**.
+
+- **Babel** em Javascript:
+  - É uma plataforma ou framework que permite compilar e testar o javascript do 'futuro', ou seja, com as mais novas funcionalidades lançadas, em outras palavras, é muito útil para testar codigos de javascript e ter como resultado o mesmo código mas adaptado para executar na maioria dos browsers.
+    - link: https://babeljs.io/
+- **Frameworks**:
+  - É um arcabouço o qual a aplicação é construída em cima, através dela é possível ter uma base para construir as aplicações. há tanto Frameworks para backend com o objetivo de persistir banco de dados, por exemplo, quanto para o FrontEnd na parte visual com o Angular.
+- Padrão de projeto *Chain of Responsability ou Middleware*: 
+  - É um padrão muito presente na web e no node. A ideia é diminuir o acoplamento de funções garantindo uma maior liberdade e utilizando a cadeia de funções com uso de **NEXT** para indicar o próximo passo.
+- Qual a diferença entre o **NPM** e o **YARN**?
+  - Basicamente o YARN também é um gerenciador de pacotes e foi criado pelo facebook com o objetivo de ser mais rápido e seguro que o NPM, além disso ainda possibilitar instalar pacotes offline.
+- **SEO (Search Engine Optimization) - Otimização para motores de busca**:
+  - Otimização de Sites (otimização para motores de pesquisa ou otimização para mecanismos de busca é o conjunto de estratégias com o objetivo de potencializar e melhorar o posicionamento de um site nas páginas de resultados orgânicos - desconsiderando links patrocinados/pagos - nos sites de busca gerando conversões, sejam elas, um lead, uma compra, um envio de formulário, agendamento de consulta e outros.
+- **Single-Page Application(SPA)**: O html é gerado dinamicamente a partir do Javascript
+- **Tipagem Forte**: É quando atribuído um tipo para a variável não poderá ser mudado.
+#### Conceitos Específicos:
+- **AJAX**:
+  - Ajax (acrônimo em língua inglesa de <em>**A**synchronous **J**avascript **a**nd **X**ML</em>, em português "Javascript Assíncrono e XML") é o uso metodológico de tecnologias como Javascript e XML, providas por navegadores, para tornar páginas Web mais interativas com o usuário, utilizando-se de solicitações assíncronas de informações.
+  - A **XMLHttpRequest** (XHR) tem um papel importante na técnica de desenvolvimento web Ajax para se comunicar com os scripts do lado do servidor. Mais recentemente foi lançado o **Fetch API**, que possui funcionalidade semelhante ao XHR com linguagem em mais alto nível.
+  - Com o AJAX da pra trabalhar com JSON também. Resumidamente, o AJAX é voltado para trabalhar com requisições assíncronas de maneira mais eficiente.
+- **Angular:**
+<details>
+  <summary>Clique aqui para expandir o conceito!</summary>
+
+- **Angular**
+  - É um framework Javascript desenvolvido pelo Google para a criação de **aplicações web SPA(Single-Page Application)** baseada em **componentes**.
   - O Angular trabalha por padrão com o TypeScript.
   - Houve uma migração da versão 1 do Angular para a versão 2 em diante.
     - **A versão 1 é chamada de AngularJS**.
@@ -111,26 +144,30 @@
   - Anatomia do módulo:
 
 ![Árvore de Componentes](DicasUteis/Angular%20-%20Anatomia%20do%20m%C3%B3dulo.jpeg "Árvore de Componentes")
-- **ECMAScript**: É o nome formal da linguagem Javascript. Javascript é uma linguagem fracamente tipada(tipagem dinâmica).
-- Tipagem forte: É quando atribuído um tipo para a variável não poderá ser mudado.
-- Qual a diferença entre o **NPM** e o **YARN**?
-  - Basicamente o YARN também é um gerenciador de pacotes e foi criado pelo facebook com o objetivo de ser mais rápido e seguro que o NPM, além disso ainda possibilitar instalar pacotes offline.
-- Frameworks:
-  - É um arcabouço o qual a aplicação é construída em cima, através dela é possível ter uma base para construir as aplicações. há tanto Frameworks para backend com o objetivo de persistir banco de dados, por exemplo, quanto para o FrontEnd na parte visual com o Angular.
-- Padrão de projeto *Chain of Responsability ou Middleware*: 
-  - É um padrão muito presente na web e no node. A ideia é diminuir o acoplamento de funções garantindo uma maior liberdade e utilizando a cadeia de funções com uso de **NEXT** para indicar o próximo passo.
+</details>
+
+- [**Bootstrap**](exercicios-web/bootstrap/README.md):
+  - Bootstrap.css é um framework CSS que organiza e gerencia o layout de um site. É um framework que tem uma grande quantidade de estilos e funcionalidades voltadas para o CSS.
+  - A framework depende do JQuery.
+  - Opções de instalação: (Via NPM, Via site, Via CDN(pega de um servidor de alto desempenho na entrega de arquivos estáticos ao invés de deixar no próprio servidor)
 - [**CSS**](exercicios-web/css/README.md):
-  - É um meio de atribuir estilos na página html
-- **AJAX**:
-  - Ajax (acrônimo em língua inglesa de <em>**A**synchronous **J**avascript **a**nd **X**ML</em>, em português "Javascript Assíncrono e XML") é o uso metodológico de tecnologias como Javascript e XML, providas por navegadores, para tornar páginas Web mais interativas com o usuário, utilizando-se de solicitações assíncronas de informações.
-  - A **XMLHttpRequest** (XHR) tem um papel importante na técnica de desenvolvimento web Ajax para se comunicar com os scripts do lado do servidor. Mais recentemente foi lançado o **Fetch API**, que possui funcionalidade semelhante ao XHR com linguagem em mais alto nível.
-  - Com o AJAX da pra trabalhar com JSON também. Resumidamente, o AJAX é voltado para trabalhar com requisições assíncronas de maneira mais eficiente.
+  - É um meio de atribuir estilos na página html.
+- **ECMAScript (JAVASCRIPT)**: É o nome formal da linguagem Javascript. Javascript é uma linguagem fracamente tipada(tipagem dinâmica).
+- **ElectronJS**: Possibilita a criação de aplicações desktop Multiplataformas(MacOS, Linux, Windows, todos usando o mesmo código) usando as tecnologias da Web como Javascript, CSS e HTML. O VSCode e o Atom, por exemplo, são feitos com o ElectronJS.
+- **GatsbyJS**:
+  - É uma framework escrita em JavaScript e React, cuja proposta é ajudar desenvolvedores a construir aplicações e websites de forma facilitada. O foco do Gatsby é proporcionar um desenvolvimento rápido, efetivo e performático, acima de tudo.
+  - A forma que ele funciona consiste em três etapas. Primeiro, você tem o Data Source, que é basicamente a fonte desses dados que você vai entregar pra construir o web site ou uma aplicação, como um blog, por exemplo.
+  - E, depois, vem o processo de building, onde ele vai incorporar todo HTML, JavaScript e CSS que são necessários para compilar sua aplicação, lendo em cima dessa fonte de dados e construir o site estático.
+  - O conceito do Gatsby é ler esses dados, construí-los de forma estática, criando um site estático, que é o que dá, de fato, essa performance para ele. Por fim, a terceira etapa é o Deploy, onde você entrega esses arquivos e os visualiza na web.
 - [**Gulp**](exercicios-web/gulp/README.md):
-  - Gulp.js é uma ferramenta de automatização de tarefas em JavaScript. Tarefas como minificar, otimizar e compilar arquivos, tão repetitivas e necessárias ao desenvolvimento, podem ser automatizadas com o Gulp.
+<details>
+  <summary>Clique aqui para expandir o conceito!</summary>
+
+- Gulp.js é uma ferramenta de automatização de tarefas em JavaScript. Tarefas como minificar, otimizar e compilar arquivos, tão repetitivas e necessárias ao desenvolvimento, podem ser automatizadas com o Gulp.
   - É usado principalmente no contexto Frontend. Trabalha com plugins ideal para cada cenário.
   - Ferramentas similares:
     - GRUNT;
-    - WebPack
+    - WebPack;
   - Utiliza os Streams do Node.js pra escrever os arquivos diretamente no disco.
   - Plugins:
     - **GULP-UGLIFY** ==> Serve para minificar arquivos usando o UGLIFY.js
@@ -146,36 +183,19 @@
     - `gulp.watch(glob, fn)`: Observa os arquivos indicados e quando uma alteração for feita, o gulp executará novamente a função.
     - `gulp.src(glob)`: Retorna um 'Readable Stream', ou seja, um Stream liberado para a leitura. Basicamente carrega os arquivos.
     - `gulp.dest(folder)`: Retorna um 'Writable Stream', ou seja, um Stream liberado para a escrita. Basicamente a pasta de destino onde serão salvos os arquivos.
-- **Babel** em Javascript:
-  - É uma plataforma ou framework que permite compilar e testar o javascript do 'futuro', ou seja, com as mais novas funcionalidades lançadas, em outras palavras, é muito útil para testar codigos de javascript e ter como resultado o mesmo código mas adaptado para executar na maioria dos browsers.
-    - link: https://babeljs.io/
-- **TypeScript**:
-  - Linguagem criada pela Microsoft.
-  - Tudo que é suportado no JavaScript é suportado no TypeScript. o TypeScript é um superconjunto de javascript pois no final o código será convertido pra javascript para poder ser executado com mais facilidade nos navegadores e outras plataformas.
-  - O core do TypeScript seria possibilitar definir tipos no JavaScript, ou seja, uma linguagem tipada.
-  - **O código escrito em Typescript é compilado para Javascript**.
-  - Orientada a objetos e **Tipagem Forte**.
-  - Recursos interessantes: Decorator e Interfaces.
-- **SASS**:
-  - É um pré-processador CSS, com isso, permite adicionar novas funcionalidade aos CSS que nao está presente no padrão e através disso permite criar arquivos CSS com maior nível de reúso.
-- [**Webpack**](exercicios-web/webpack/README.md):
-  - Apresenta uma finalidade similar ao GULP no sentido de minificar arquivos e realizar tarefas, contudo, a diferença é que o GULP trabalha com TASKs, ou seja, tarefas a serem executadas e utiliza o padrão PIPE para executar as tarefas, já o **webpack é diferente pois trabalha com módulos**.
-  - **<u>Importante</u>**: O Webpack apresenta <u>um **módulo de entrada**</u> nas configurações e só vai conseguir chegar em outros módulos somente se tiver `import` seja no módulo principal ou nos subsequentes.
-    - O mesmo vale para imagens, arquivos de texto, fontes, CSS e afins... O loader irá reclamar se nao tiver importado em algum lugar.
-  - Padrão de módulos:
-    - CommonsJS: O node se baseia neste modulo, com module.exports e toda a configuração.
-    - webpack: Padrão oficial da linguagem, implantado no ECMAScript 2015. Este sistema de modulos é baseado em `port` e `exports`.
-  - O webpack apresenta um sistema de `loader`, o que significa que dependendo da extensão do arquivo ele vai aplicar um tipo de lógica para renderizar aquele arquivo.
+
+</details>
+
 - **JQuery**:
   - É uma biblioteca javascript muito popular, ajuda a buscar elementos na DOM. Trabalha com eventos e Ajax, utiliza os seletores do CSS, permite fazer o encadeamento de chamadas, fácil criação de plugins, suporte amplo nos browsers.
   - Pontos negativos:
     - A web está migrando para trabalhar componentes (Angular, React, vie,...), contudo, um caminho contrário ao JQuery.
-- [**Bootstrap**](exercicios-web/bootstrap/README.md):
-  - Bootstrap.css é um framework CSS que organiza e gerencia o layout de um site. É um framework que tem uma grande quantidade de estilos e funcionalidades voltadas para o CSS.
-  - A framework depende do JQuery.
-  - Opções de instalação: (Via NPM, Via site, Via CDN(pega de um servidor de alto desempenho na entrega de arquivos estáticos ao invés de deixar no próprio servidor)
+
 - [**React**](exercicios-web/react/README.md):
-  - O React é uma biblioteca(framework) JavaScript de código aberto com foco em criar interfaces de usuário em páginas web. É mantido pelo Facebook, Instagram, outras empresas e uma comunidade de desenvolvedores individuais.
+<details>
+  <summary>Clique aqui para expandir o conceito!</summary>
+
+- O React é uma biblioteca(framework) JavaScript de código aberto com foco em criar interfaces de usuário em páginas web. É mantido pelo Facebook, Instagram, outras empresas e uma comunidade de desenvolvedores individuais.
   - A ideia principal do React é trabalhar por meio de componentes(visando facilitar a manutenibilidade do código e leitura) podendo serem feitos tanto em typescript quanto em javascript.
   - O React tem sido usado por grandes companhias ao redor do mundo. Algumas delas: Netflix, Airbnb, American Express, Facebook, WhatsApp, eBay e Instagram. Essa é a prova de que a ferramenta tem um número de vantagens que não têm nem comparação nos seus competidores.   
   - O React geralmente utiliza a extensão **JSX** que combina o javascript com elementos HTML ou **TSX** relativo ao typescript.
@@ -232,7 +252,7 @@
   ]   
   ```
   - Tipos de componentes:
-    - Funcional: É uma função que retorna um elemento JSX
+    - **Funcional**: É uma função que retorna um elemento JSX
       ```JSX
       import React from 'react'
 
@@ -240,7 +260,7 @@
       export default () =>
           <h1>Primeiro</h1>
       ```
-    - de Classe: É uma classe de um objeto que, diferentemente do funcional, pode apresentar estados,  métodos de ciclo de vida (Chamar um trecho de código antes de um componente ser renderizado, Chamar um trecho de código quando o componente for destruído,...).
+    - **de Classe**: É uma classe de um objeto que, diferentemente do funcional, pode apresentar estados,  métodos de ciclo de vida (Chamar um trecho de código antes de um componente ser renderizado, Chamar um trecho de código quando o componente for destruído,...).
       - **Observação**: Quando é um componente de classe, a classe criada herdará os métodos e atributos do `Component` do React, e portanto, deve-se importa-lo também.
        
       ```JSX
@@ -293,8 +313,22 @@
           - http://localhost:3000/#/users
           - http://localhost:3000/#/home
         Utilizar o BrowserRouter para a build em produção pode requerer alguns ajustes nas rotas principalmente quando for utilizado um servidor apache ou outros, já o HashRouter não, ele identifica a raiz da pagina sendo '/#' e identifica todas as rotas.
+</details>
+
+- **SASS**:
+  - É um pré-processador CSS, com isso, permite adicionar novas funcionalidade aos CSS que nao está presente no padrão e através disso permite criar arquivos CSS com maior nível de reúso.
+- **TypeScript**:
+  - Linguagem criada pela Microsoft.
+  - Tudo que é suportado no JavaScript é suportado no TypeScript. o TypeScript é um superconjunto de javascript pois no final o código será convertido pra javascript para poder ser executado com mais facilidade nos navegadores e outras plataformas.
+  - O core do TypeScript seria possibilitar definir tipos no JavaScript, ou seja, uma linguagem tipada.
+  - **O código escrito em Typescript é compilado para Javascript**.
+  - Orientada a objetos e **Tipagem Forte**.
+  - Recursos interessantes: Decorator e Interfaces.
 - [**VueJS**](exercicios-web/vuejs/README.md):
-  - É um framework muito usado, contudo não é mantido por uma empresa como ReactJS-Facebook e AngularJS-Google, logo é mantido pela própria comunidade.
+<details>
+  <summary>Clique aqui para expandir o conceito!</summary>
+
+- É um framework muito usado, contudo não é mantido por uma empresa como ReactJS-Facebook e AngularJS-Google, logo é mantido pela própria comunidade.
   - É um framework JavaScript open source para a criação de aplicações web, criado por Evan You em 2014. O Vue.js possibilita criar aplicações de forma reativa. O Vue.js faz a utilização de um DOM virtual, o que faz com que seja extremamente performático na maioria das situações. Além disso, conta com uma arquitetura muito bem estruturada por meio da criação de componentes reusáveis.
   - Este framework é muito utilizado para criar aplicações **SPA (Single Page Applications)** e também para desenvolver vários outros tipos de interfaces, com foco na interação e experiência do usuário. Atualmente e não à toa, o Vue.js está entre os frameworks Javascript para criação de interfaces mais populares do mundo, devido à sua baixa curva de aprendizado, sua versatilidade e por oferecer uma solução bem completa – contando até mesmo com uma CLI(linha de comando), o Vue CLI.
   - Principais características: 
@@ -306,24 +340,29 @@
         - https://quasar.dev/
       - **Vuetify**: É uma biblioteca de componentes auxiliar do Vue voltada materiais de design de interfaces.
   - Geralmente a partir de um trecho de html como uma 'div' por exemplo, o vue pode ser responsável e controlar a renderização e comportamento daquele elemento desde que associe um <i>Vue Instance</i> ao trecho de html e logo este trecho será controlado pelo Vue.
-- **API REST**:
-  - Representational State Transfer (**REST**), em português Transferência Representacional de Estado, é um estilo de arquitetura de software que define um conjunto de restrições a serem usadas para a criação de web services (serviços Web). Os Web services que estão em conformidade com o estilo arquitetural **REST**, denominados Web services **RESTful**, fornecem interoperabilidade entre sistemas de computadores na Internet. Os Web services **RESTful** permitem que os sistemas solicitantes acessem e manipulem representações textuais de recursos da Web usando um conjunto uniforme e predefinido de operações sem estado. Outros tipos de Web services, como Web services **SOAP**, expõem seus próprios conjuntos de operações arbitrários.
-  - Em um Web service **RESTful**, as solicitações feitas ao URI de um recurso provocará uma resposta com uma carga útil formatada em HTML, XML, JSON ou algum outro formato. A resposta pode confirmar que alguma alteração foi feita no recurso armazenado e a resposta pode fornecer links de hipertexto para outros recursos ou conjuntos de recursos relacionados. Quando o **HTTP** é usado, como é o mais comum, as operações (métodos **HTTP**) disponíveis são **GET, HEAD, POST, PUT, PATCH, DELETE, CONNECT, OPTIONS e TRACE**.
+</details>
+
+- [**Webpack**](exercicios-web/webpack/README.md):
+  
+<details>
+  <summary>Clique aqui para expandir o conceito!</summary>
+
+- Apresenta uma finalidade similar ao GULP no sentido de minificar arquivos e realizar tarefas, contudo, a diferença é que o GULP trabalha com TASKs, ou seja, tarefas a serem executadas e utiliza o padrão PIPE para executar as tarefas, já o **webpack é diferente pois trabalha com módulos**.
+  - **<u>Importante</u>**: O Webpack apresenta <u>um **módulo de entrada**</u> nas configurações e só vai conseguir chegar em outros módulos somente se tiver `import` seja no módulo principal ou nos subsequentes.
+    - O mesmo vale para imagens, arquivos de texto, fontes, CSS e afins... O loader irá reclamar se nao tiver importado em algum lugar.
+  - Padrão de módulos:
+    - **CommonsJS**: O node se baseia neste modulo, com module.exports e toda a configuração.
+    - webpack: Padrão oficial da linguagem, implantado no ECMAScript 2015. Este sistema de módulos é baseado em `port` e `exports`.
+  - O webpack apresenta um sistema de `loader`, o que significa que dependendo da extensão do arquivo ele vai aplicar um tipo de lógica para renderizar aquele arquivo.
+</details>
+  
 - **Wordpress**:
   - **WordPress** é um sistema livre e aberto de gestão de conteúdo para internet (do inglês: *Content Management System* - CMS), baseado em **PHP** com banco de dados **MySQL**, executado em um servidor interpretador, voltado principalmente para a criação de páginas eletrônicas (sites) e blogs online.
   - É uma das ferramentas mais utilizadas para conteúdo na web, disputando com o serviço do Google, chamado Blogger. No entanto, o WordPress é adotado por aqueles que queiram uma página com maior personalização e recursos diferenciais.
   - O WordPress possui um sistema de modelos, através de um processador de modelos. O usuário pode re-organizar o layout através de widgets sem precisar editar códigos PHP ou HTML; eles também podem instalar e alternar entre temas WordPress. Os códigos PHP e HTML dos temas também podem ser editados para adicionar funcionalidades personalizadas.
-- **SEO (Search Engine Optimization) - Otimização para motores de busca**:
-  - Otimização de Sites (otimização para motores de pesquisa ou otimização para mecanismos de busca é o conjunto de estratégias com o objetivo de potencializar e melhorar o posicionamento de um site nas páginas de resultados orgânicos - desconsiderando links patrocinados/pagos - nos sites de busca gerando conversões, sejam elas, um lead, uma compra, um envio de formulário, agendamento de consulta e outros.
-- **GatsbyJS**:
-  - É uma framework escrita em JavaScript e React, cuja proposta é ajudar desenvolvedores a construir aplicações e websites de forma facilitada. O foco do Gatsby é proporcionar um desenvolvimento rápido, efetivo e performático, acima de tudo.
-  - A forma que ele funciona consiste em três etapas. Primeiro, você tem o Data Source, que é basicamente a fonte desses dados que você vai entregar pra construir o web site ou uma aplicação, como um blog, por exemplo.
-  - E, depois, vem o processo de building, onde ele vai incorporar todo HTML, JavaScript e CSS que são necessários para compilar sua aplicação, lendo em cima dessa fonte de dados e construir o site estático.
-  - O conceito do Gatsby é ler esses dados, construí-los de forma estática, criando um site estático, que é o que dá, de fato, essa performance para ele. Por fim, a terceira etapa é o Deploy, onde você entrega esses arquivos e os visualiza na web.
 - **Webflow**:
   - Com esta plataforma qualquer cidadão comum ou desenvolvedor consegue criar experiências agradáveis para o consumidor final. Esta poderosa plataforma desenvolvida pela Amazon Web Services está ajudando centenas de empreendedores ao redor do mundo.
   - Trata-se de uma proposta elaborada pela Amazon Web Services que permite construir sites responsivos sem a necessidade de ficar digitando linhas de código intermináveis, o Webflow faz com que o site seja adaptado para diferentes tamanhos de telas, que podem ser desktops, tablets e smartphones. 
-- **ElectronJS**: Possibilita a criação de aplicações desktop Multiplataformas(MacOS, Linux, Windows, todos usando o mesmo código) usando as tecnologias da Web como Javascript, CSS e HTML. O VSCode e o Atom, por exemplo, são feitos com o ElectronJS.
 
 
 <div style="color: #F88">
