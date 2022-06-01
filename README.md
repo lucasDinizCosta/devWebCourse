@@ -66,20 +66,51 @@
 - **Módulo FileSystem(fs)**: É padrão do node. Responsável tanto por ler quanto por escrever arquivos e verificar os conteúdos de uma pasta.
 
 ### Programas:
-- **POSTMAN**: É um programa que possibilita fazer requisições **REST(GET, PUT,...)** de maneira mais fácil. Muito útil para testar requisições ao servidor tanto local quando já hospedado online.
+- **POSTMAN**: É um programa que possibilita fazer requisições **REST(GET, PUT, POST, PATCH...)** de maneira mais fácil. Muito útil para testar requisições ao servidor tanto local quando já hospedado online.
 
-<div style="color: #F88">
-<h2>Erros Comuns</h2>
-</div>
-
-- `Module build failed: ModuleBuildError: Module build failed: Error: Node Sass version 7.0.1 is incompatible with ^4.0.0.`
-  - A dependência **node-sass** foi descontinuada, contudo, a dependência atual é o **sass**
-    - `npm uninstall node-sass` => Desinstalando o node-sass;
-    - `npm install sass` => Instalando o sass;
-  - Caso mesmo assim deseja-se instalar o node-sass:
-    - `npm install node-sass@(your version)`
-    - De preferência usar a versão "7.0.1" que é a última e pode ser ter uma compatibilidade melhor com o nodejs atual.
 ## Anotações:
+- **Árvore de Componentes**: Serve para qualquer framework baseado em componentes(Angular, React, VueJS, Flutter, etc.).
+
+![Árvore de Componentes](DicasUteis/arvoreDeComponentes.jpeg "Árvore de Componentes")
+- **Single-Page Application**: O html é gerado dinamicamente a partir do Javascript.
+- **Angular**: É um framework Javascript desenvolvido pelo Google para a criação de **aplicações web SPA(Single-Page Application)** baseada em **componentes**.
+  - O Angular trabalha por padrão com o TypeScript.
+  - Houve uma migração da versão 1 do Angular para a versão 2 em diante.
+    - **A versão 1 é chamada de AngularJS**.
+    - É um framework bem diferente da versão 2 em diante, não somente pelo fato de trabalhar com componentes quanto outros fatores.
+    - O Angular utiliza fortemente a CLI(Command Line Interface)
+      - **Instalação**: `npm i -g @angular/cli`
+      - Criar a aplicação: `ng new minha-app`
+  - Inicialização da App do Angular:
+    - main.ts: Primeiro arquivo que será chamado pra inicializar a aplicação Angular.
+    - AppModule: É o módulo da aplicação que será chamado a partir do arquivo main.ts
+      - Observação importante: O Angular permite restringir componentes a determinados módulos, ou seja, permite um maior acoplamento evitando que seja importado e visualizado em lugares indevidos. React e Vue isto não ocorre.
+      - Dentro do AppModule há um atributo chamado 'Bootstrap' que aponta para o componente 'AppComponent', sendo este o componente padrão.
+  - Componente Angular: Basicamente segue a ideia de um objeto que apresenta HTML, CSS e TS que define como ele se comportará.
+    - Exemplo de um componente chamado 'home' que terá os seguintes arquivos: `home.component.css`, `home.component.html` e `home.component.ts`. Além disso, gera a tag personalizada `<app-home></app-home>`
+    
+    ```Typescript
+      import { Component, OnInit } from '@angular/core';
+
+      @Component({
+        selector: 'fenix-home',
+        templateUrl: './home.component.html',
+        styleUrls: ['./home.component.css']
+      })
+
+      export class HomeComponent implements OnInit {
+        constructor(){  }
+
+        ngOnInit(): void {
+
+        }
+      }
+    ```
+
+    - **Os componentes se agrupam em módulos conforme a representação em árvore**
+  - Anatomia do módulo:
+
+![Árvore de Componentes](DicasUteis/Angular%20-%20Anatomia%20do%20m%C3%B3dulo.jpeg "Árvore de Componentes")
 - **ECMAScript**: É o nome formal da linguagem Javascript. Javascript é uma linguagem fracamente tipada(tipagem dinâmica).
 - Tipagem forte: É quando atribuído um tipo para a variável não poderá ser mudado.
 - Qual a diferença entre o **NPM** e o **YARN**?
@@ -119,8 +150,12 @@
   - É uma plataforma ou framework que permite compilar e testar o javascript do 'futuro', ou seja, com as mais novas funcionalidades lançadas, em outras palavras, é muito útil para testar codigos de javascript e ter como resultado o mesmo código mas adaptado para executar na maioria dos browsers.
     - link: https://babeljs.io/
 - **TypeScript**:
+  - Linguagem criada pela Microsoft.
   - Tudo que é suportado no JavaScript é suportado no TypeScript. o TypeScript é um superconjunto de javascript pois no final o código será convertido pra javascript para poder ser executado com mais facilidade nos navegadores e outras plataformas.
   - O core do TypeScript seria possibilitar definir tipos no JavaScript, ou seja, uma linguagem tipada.
+  - **O código escrito em Typescript é compilado para Javascript**.
+  - Orientada a objetos e **Tipagem Forte**.
+  - Recursos interessantes: Decorator e Interfaces.
 - **SASS**:
   - É um pré-processador CSS, com isso, permite adicionar novas funcionalidade aos CSS que nao está presente no padrão e através disso permite criar arquivos CSS com maior nível de reúso.
 - [**Webpack**](exercicios-web/webpack/README.md):
@@ -289,3 +324,16 @@
   - Com esta plataforma qualquer cidadão comum ou desenvolvedor consegue criar experiências agradáveis para o consumidor final. Esta poderosa plataforma desenvolvida pela Amazon Web Services está ajudando centenas de empreendedores ao redor do mundo.
   - Trata-se de uma proposta elaborada pela Amazon Web Services que permite construir sites responsivos sem a necessidade de ficar digitando linhas de código intermináveis, o Webflow faz com que o site seja adaptado para diferentes tamanhos de telas, que podem ser desktops, tablets e smartphones. 
 - **ElectronJS**: Possibilita a criação de aplicações desktop Multiplataformas(MacOS, Linux, Windows, todos usando o mesmo código) usando as tecnologias da Web como Javascript, CSS e HTML. O VSCode e o Atom, por exemplo, são feitos com o ElectronJS.
+
+
+<div style="color: #F88">
+<h2>Erros Comuns</h2>
+</div>
+
+- `Module build failed: ModuleBuildError: Module build failed: Error: Node Sass version 7.0.1 is incompatible with ^4.0.0.`
+  - A dependência **node-sass** foi descontinuada, contudo, a dependência atual é o **sass**
+    - `npm uninstall node-sass` => Desinstalando o node-sass;
+    - `npm install sass` => Instalando o sass;
+  - Caso mesmo assim deseja-se instalar o node-sass:
+    - `npm install node-sass@(your version)`
+    - De preferência usar a versão "7.0.1" que é a última e pode ser ter uma compatibilidade melhor com o nodejs atual.
