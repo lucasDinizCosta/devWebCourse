@@ -4,7 +4,13 @@
 - url: https://www.udemy.com/course/curso-web
 
 ### Aplicações desenvolvidas:
-- Seção 30: Aplicação Desktop com Javascript, ElectronJS e VueJS - Most Used Words - https://github.com/cod3rcursos/youtube/tree/master/most-used-words
+- Seção 21: Projeto Galeria (**Bootstrap/JQuery/Webpack**) -- [Galeria](exercicios-web/bootstrap/projeto-galeria/)
+- Seção 23: Projeto Calculadora (**REACT**) -- [Calculadora](exercicios-web/react/calculator)
+- Seção 24: Projeto de Cadastro de Usuários (**REACT**) -- [CRUD](exercicios-web/react/crud/)
+- Seção 27: Projetos **Vue** -- [QRCode](exercicios-web/vue/qrcode/)
+- Seção 28: Calculadora (**Vue**) -- [Calculadora](exercicios-web/vue/calculator/)
+- Seção 29: Projeto MontyHall (**Vue**) -- [MontyHall](exercicios-web/vue/montyhall/)
+- Seção 30: Aplicação Desktop com **Javascript, ElectronJS e VueJS** - [Most Used Words](exercicios-web/vue/most-used-words/)
 
 ## VSCode:
 
@@ -12,19 +18,19 @@
 - `CTRL + ALT + N`: Executa o arquivo de código no VSCode
 - `CTRL + ALT + M`: Para a execução no VSCode
 
-### Modos alternativos de execução do Javascript
+### Modos de execução do Javascript
 - Ferramentas Online:
   - repl.it
   - jsfiddle
 - Editor de texto (VSCode, Atom,...)
-- Browser (Chrome, Firefox, Brave,...)
+- Browser (Chrome, Firefox, Brave, Opera, ...)
 - Node (Muito usado no backend)
 ### Extensões:
 - CodeRunner: Permite rodar comandos javascript pelo VSCode
 
 ## Comandos do NPM ou Yarn:
 - `npm init`(`npm i`) ou `yarn init`(`yarn i`) ==> Inicializa o projeto node na pasta atual, caso tenha o arquivo `package.json` será feita a instalação de todas as dependências seja com o NPM ou o YARN, caso o arquivo não exista, ele será criado.
-- `npm install NomePacote` ou `yarn add NomePacote` ==> Instala um pacote no projeto através do NPM ou do YARN.
+- `npm install NomePacote (ou npm i NomePacote)` ou `yarn add NomePacote` ==> Instala um pacote no projeto através do NPM ou do YARN.
   - OBS: Instalando de **maneira global** no node, ou seja, todos os projetos no computador terão acesso
     - `npm install -g NomePacote`
 - `npm update NomePacote` ou `yarn upgrade NomePacote` ==> Atualiza um pacote no projeto.
@@ -36,34 +42,33 @@
 - `gulp --version` ==> Exibe a versão instalada do gulp e do CLI (**C**ommand **L**ine **I**nterface).
 - `gulp` ==> Executa o gulp via terminal a partir do arquivo fundamental chamando `gulpfile.js`.
 
+
+## Pacotes, API, ou programas importantes:
 ### Dependências importantes do Node:
-- **Axios**: É um **client HTTP**. É ideal para fazer e interceptar requisições REST(GET, PUT,...). Faz requisições para obter informações de algo que está remoto. O Axios é baseado em **Promises** do javascript, ou seja, tem-se um promessa de que as requisições trarão uma informação e caso for satisfeita, será tratado os dados conforme o programador tenha solicitado. Ao utilizar promessas, o Axios pode fazer requisições de maneira assíncrona com base no `async` e o `await`.
+- **Axios**: É um **client HTTP**. É ideal para fazer e interceptar requisições **REST(GET, PUT,...)**. Faz requisições para obter informações de algo que está remoto. O Axios é baseado em **Promises** do javascript, ou seja, tem-se um promessa de que as requisições trarão uma informação e caso for satisfeita, será tratado os dados conforme o programador tenha solicitado. Ao utilizar promessas, o Axios pode fazer requisições de maneira assíncrona com base no `async` e o `await`.
+- **Body-Parser**: Serve para trabalhar com dados vindos do cliente, recebendo e trabalhando com JSON. Pega o padrão **URLENCODE** do body da requisição e trata como um JSON.
+  - Instalação: `npm i --save body-parser`
 - **Express**: É um framework que auxilia na construção de web-services do lado do backend.
   - Instalação: `npm i --save express@4.16.3 -E`
     - Instala a versao especifica 4.16.3
-    - `-E` define que deve ser a versão exata
-- **Lodash**: Uma biblioteca JavaScript que fornece funções úteis para tarefas comuns de programação usando o paradigma de programação funcional.
-  - Instalação: `npm i lodash`
-- **JSON-Server**: Dependência que permite criar um servidor local voltado para o JSON.
-- **Nodemon**: Esse módulo irá monitorar todas as alterações nos arquivos de sua aplicação e reiniciar automaticamente o servidor quando for necessário. Fica fazendo Refresh na aplicação atualizando a cada mudança salva.
-  - Instalação Global: `npm i -g nodemon`
-  - Para rodar os scripts: `nodemon script.js`
-  - Reinicia o nodemon: comando **rs**
-  - Parar o nodemon: `CTRL + C`
-
-## Pacotes, API, ou programas importantes:
-### Módulos do próprio Node:
-- **Node-Schedule**: Agendador de tarefas, em outras palavras, um temporizador que possibilita projetar uma tarefa para ser executada de tempos em tempos.
-  - Instalação: `npm i node-schedule`
+    - `-E` define que deve ser a versão exata.
+- **FileSystem(fs)**: É padrão do node. Responsável tanto por ler quanto por escrever arquivos e verificar os conteúdos de uma pasta.
 - **HTTP-Server**: Pacote que possibilita criar um servidor HTTP local para node.
   - Instalação: `npm i http-server`
   - Execução: 
     - `http-server .` ==> '.' representa a pasta atual
     - `http-server -P 9090 .` ==> '.' diretório atual na porta '9090'
   - Desabilita o cache para atualizar a página ao salvar o arquivo: `http-server -c-1 .`
-- **Body-Parser**: Serve para trabalhar com dados vindos do cliente, recebendo e trabalhando com JSON. Pega o padrão **URLENCODE** do body da requisição e trata como um JSON.
-  - Instalação: `npm i --save body-parser`
-- **Módulo FileSystem(fs)**: É padrão do node. Responsável tanto por ler quanto por escrever arquivos e verificar os conteúdos de uma pasta.
+- **JSON-Server**: Dependência que permite criar um servidor local voltado para o JSON, utilizado na aplicação VueJS -> `most-used-words`. Basicamente passando um arquivo JSON ele simula um banco de dados.
+- **Lodash**: Uma biblioteca JavaScript que fornece funções úteis para tarefas comuns de programação usando o paradigma de programação funcional.
+  - Instalação: `npm i lodash`
+- **Nodemon**: Esse módulo irá monitorar todas as alterações nos arquivos de sua aplicação e reiniciar automaticamente o servidor quando for necessário. Fica fazendo Refresh na aplicação atualizando a cada mudança salva.
+  - Instalação Global: `npm i -g nodemon`
+  - Para rodar os scripts: `nodemon script.js`
+  - Reinicia o nodemon: comando `rs`
+  - Parar o nodemon: `CTRL + C`
+- **Node-Schedule**: Agendador de tarefas, em outras palavras, um temporizador que possibilita projetar uma tarefa para ser executada de tempos em tempos.
+  - Instalação: `npm i node-schedule`
 
 ### Programas:
 - **POSTMAN**: É um programa que possibilita fazer requisições **REST(GET, PUT, POST, PATCH...)** de maneira mais fácil. Muito útil para testar requisições ao servidor tanto local quando já hospedado online.
@@ -88,6 +93,7 @@
     - link: https://babeljs.io/
 - **Frameworks**:
   - É um arcabouço o qual a aplicação é construída em cima, através dela é possível ter uma base para construir as aplicações. há tanto Frameworks para backend com o objetivo de persistir banco de dados, por exemplo, quanto para o FrontEnd na parte visual com o Angular.
+- **GIT**: É basicamente um método realizar o versionamento do seu código, criar backups e facilitar o trabalho em equipes através de suas **branchs**.
 - Padrão de projeto *Chain of Responsability ou Middleware*: 
   - É um padrão muito presente na web e no node. A ideia é diminuir o acoplamento de funções garantindo uma maior liberdade e utilizando a cadeia de funções com uso de **NEXT** para indicar o próximo passo.
 - Qual a diferença entre o **NPM** e o **YARN**?
