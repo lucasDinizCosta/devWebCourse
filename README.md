@@ -119,34 +119,92 @@
     - É um framework bem diferente da versão 2 em diante, não somente pelo fato de trabalhar com componentes quanto outros fatores.
     - O Angular utiliza fortemente a CLI(Command Line Interface)
       - **Instalação**: `npm i -g @angular/cli`
-      - Criar a aplicação: `ng new minha-app`
+      - **Criar a aplicação**: `ng new minha-app`
+      - **Criar a aplicação com o mínimo pra funcionar, retirando a parte de teste de software**: `ng new minha-app --minimal`
+      - **Inicia o projeto e faz a compilação dos arquivos**: `npm start`
   - Inicialização da App do Angular:
     - main.ts: Primeiro arquivo que será chamado pra inicializar a aplicação Angular.
     - AppModule: É o módulo da aplicação que será chamado a partir do arquivo main.ts
       - Observação importante: O Angular permite restringir componentes a determinados módulos, ou seja, permite um maior acoplamento evitando que seja importado e visualizado em lugares indevidos. React e Vue isto não ocorre.
       - Dentro do AppModule há um atributo chamado 'Bootstrap' que aponta para o componente 'AppComponent', sendo este o componente padrão.
-  - Componente Angular: Basicamente segue a ideia de um objeto que apresenta HTML, CSS e TS que define como ele se comportará.
-    - Exemplo de um componente chamado 'home' que terá os seguintes arquivos: `home.component.css`, `home.component.html` e `home.component.ts`. Além disso, gera a tag personalizada `<app-home></app-home>`
-    
-    ```Typescript
-      import { Component, OnInit } from '@angular/core';
+  - Detalhes importantes:
+    - **Decorator**: É um padrão de projeto que visa a troca de trabalhar com herança para trabalhar com composição para estender um determinado objeto.
+      - São os '@' que o angular utiliza, como o '@Directive' por exemplo.
+    - Dentro do arquivo **angular.json** vem todas as configurações relativas ao angular:
+      - **"inlineTemplate"** e **"inlineStyle"**: Representam que os componentes criados terão o **HTML + CSS + Typescript** em um arquivo **ÚNICO** ou em arquivos **SEPARADOS**.
+    - Dependências ou módulos do Angular:
+      1. `ng add @angular/material`: Tem uma série de **componentes** interessantes que auxiliam a construir uma aplicação seguindo o **padrão do google**.
+      2. `MatToolbarModule` do material design.
+    - `ng generate component components/template/header` ou `ng g c components/template/header`: Cria o componente 'components/template/header'.
+    - **Assuntos importantes**:
+      - **Componente Angular**: Basicamente segue a ideia de um objeto que apresenta HTML, CSS e TS que define como ele se comportará.
+        - Exemplo de um componente chamado 'home' que terá os seguintes arquivos: `home.component.css`, `home.component.html` e `home.component.ts`. Além disso, gera a tag personalizada `<app-home></app-home>`
+        ```Typescript
+        import { Component, OnInit } from '@angular/core';
 
-      @Component({
-        selector: 'fenix-home',
-        templateUrl: './home.component.html',
-        styleUrls: ['./home.component.css']
-      })
+        @Component({
+          selector: 'fenix-home',
+          templateUrl: './home.component.html',
+          styleUrls: ['./home.component.css']
+        })
 
-      export class HomeComponent implements OnInit {
-        constructor(){  }
+        export class HomeComponent implements OnInit {
+          constructor(){  }
 
-        ngOnInit(): void {
+          ngOnInit(): void {
 
+          }
         }
-      }
-    ```
-
-    - **Os componentes se agrupam em módulos conforme a representação em árvore**
+        ```
+        - **Os componentes se agrupam em módulos conforme a representação em árvore**
+      - **Diretivas**
+        - Há 2 tipos de diretivas:
+          - **Diretiva de Atributo**: Altera a **aparência**(Mexer no CSS, por exemplo) e o **comportamento** de um elemento, componente ou outras diretiva. 
+          ```typescript
+          @Directive({    // Decorator
+            selector: '[appRed]
+          })
+          export class RedDirective{
+            constructor(el: ElementRef){
+              el.nativeElement.style.color = '#e35e6b';
+            }
+          }
+          ```
+          ```Typescript
+            //Aplicando a diretiva de atributo
+            <i class="material-icons v-middle" appRed>
+              favorite
+            </i>
+          ```
+          - **Diretiva Estrutural**: Altera o layout **adicionando** e **removendo** elementos da **DOM**.
+          ```typescript
+          <form *ngIf="product" class="product-form>  </form>
+          ```
+          ```typescript
+          <ul>
+            <li *ngFor="let product of products">
+              {{ product.name }}
+            </li>
+          </ul>
+          ```
+      - Property **Binding**: Como o componente possui é um conjunto "amarrado" entre HTML, CSS e TS, logo para se utilizar um atributo da classe TS no HTML de modo que mantenha esta amarração e aponte para a mesma variável ou atributo é **utilizando colchetes**. Por exemplo, no html preciso verificar o atributo **products** que está na classe TS, para isso será utilizado `[dataSource]="products"`.
+      ```html
+      <table [dataSource]="products">   </table>
+      ```
+      - Event **Binding**: Como ligar um evento que está no HTML com um método que está no TS?!? Para isto, será utilizado a sintaxe dos **parenteses**.
+      ```HTML
+      <button mat-raised-button
+        (click)="createProduct()"
+        color="primary" > 
+        Salvar 
+      </button>
+      ``` 
+      - One Way Data **Binding**: Seria a forma padrão do Property Binding, basicamente a amarração de atributos a partir de um lado, ou seja, no sentido da componente para o HTML, por exemplo: Suponhamos que temos a variável `nome: string`(sendo Rebecca o nome) no arquivo TS e no HTML temos `<input [value]="nome">`(Rebecca será preenchida no campo) referenciando o atributo, em seguida resolvemos mudar o nome para "Ana" no componente(Typescript), em seguida, irá mandar uma notificação para o HTML que atualizará o nome no campo para "Ana" também.
+      - Two Way Data **Binding**: Amarração de atributos a partir de AMBOS os lados, ou seja, no sentido da componente para o HTML e de HTML para componente, por exemplo: Suponhamos que temos a variável `nome: string`(sendo Rebecca o nome) no arquivo TS e no HTML temos `<input [(ngModel)]="nome">`(Rebecca será preenchida no campo) referenciando o atributo, em seguida resolvemos mudar o nome para "Ana" no componente, em seguida, irá mandar uma notificação para o HTML que atualizará o nome no campo para "Ana" também. Contudo, o contrário também é válido, se o nome for mudado no HTML, também será modificado no arquivo TS do componente.
+    - **Angular Router**: Estabelece as rotas de navegação entre os componente, ideia parecida com o React-Router-DOM, contudo, no Angular a componente será injetada no **Router Outlet**.
+      - Exemplo: Em um link para Produtos representado pela tag '`<a routerLink="/products">Produtos</a>`', será adicionado o atributo '`routerLink="/products"`' que estabelece a rota para produtos, em seguida na lista de rotas será buscado o component de path '`products`' e será injetado na tag `<router-outlet></router-outlet>`.
+    - **Angular Pipes(pipe: '|')**: São processamentos feitos em cima de variáveis, geralmente presente entre **double-mustaches**:` {{ variavel }}`
+      - Sua utilização é presente quando, por exemplo, se recebe um valor do banco de dados e é desejado fazer um tratamento nele antes de exibir para o usuário, tal como formatar com o símbolo monetário: `<p>O vencimento é {{ produto.vencimento | date: 'fullDate' | uppercase }}</p>` ==> Encadeamento('Chaining') de pipes
   - Anatomia do módulo:
 
 ![Árvore de Componentes](DicasUteis/Angular%20-%20Anatomia%20do%20m%C3%B3dulo.jpeg "Árvore de Componentes")
