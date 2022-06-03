@@ -204,10 +204,28 @@
     - **Angular Router**: Estabelece as rotas de navegação entre os componente, ideia parecida com o React-Router-DOM, contudo, no Angular a componente será injetada no **Router Outlet**.
       - Exemplo: Em um link para Produtos representado pela tag '`<a routerLink="/products">Produtos</a>`', será adicionado o atributo '`routerLink="/products"`' que estabelece a rota para produtos, em seguida na lista de rotas será buscado o component de path '`products`' e será injetado na tag `<router-outlet></router-outlet>`.
     - **Angular Pipes(pipe: '|')**: São processamentos feitos em cima de variáveis, geralmente presente entre **double-mustaches**:` {{ variavel }}`
-      - Sua utilização é presente quando, por exemplo, se recebe um valor do banco de dados e é desejado fazer um tratamento nele antes de exibir para o usuário, tal como formatar com o símbolo monetário: `<p>O vencimento é {{ produto.vencimento | date: 'fullDate' | uppercase }}</p>` ==> Encadeamento('Chaining') de pipes
+      - Sua utilização é presente quando, por exemplo, se recebe um valor do banco de dados e é desejado fazer um tratamento nele antes de exibir para o usuário, tal como formatar com o símbolo monetário: `<p>O vencimento é {{ produto.vencimento | date: 'fullDate' | uppercase }}</p>` ==> Encadeamento('Chaining') de pipes.
+    - **Programação Reativa(ReactiveX)**: Um código que atua de forma proativa irá ficar tentando fazer algum tipo de processamento, deste modo, consumindo mais processamento, ou seja, fica "perguntando" a todo momento se há algo que precisa ser feito, assim, não é tão desejado um programa que trabalhe dessa forma, o contrário é o padrão de programação reativa que o código será executado somente se houver uma ação ou evento externo para ser executado.
+      - No Angular tem a framework associada: `import { Observable} from "rxjs";`
+      - **Padrão Observer**: É um padrão orientado a **eventos**, os elementos observadores(do tipo "observer") serão registrado no elemento do tipo "Subject", e quando houver um evento determinado, o subject irá notificar os observadores.
+      - Entendendo **Observables**: Callbacks ==> Promises(Só pode ser executado uma única vez, facilita aninhamentos) ==> Observables(Reusável, Stream de dados(Exemplo: Observar uma votação, de tempos em tempos olha o servidor para atualizar a informação), Operadores(filter, map,...))
+    - **Services**: São classes que têm como principal objetivo **organizar** e **compartilhar** métodos e dados entre **componentes**.
+      - Comando: `ng g s services/product`
+      ```typescript
+        @Injectable({     //Decorator que possibilita ser injetada em outra classe
+          providedIn: "root",
+        })
+        export class ProductService{
+          //...
+        }
+      ```
+    - **Injeção de Dependências**: É um padrão no qual a classe recebe as **dependências** de uma **fonte externa** ao invés de criar por conta própria.
+    
+    ![Injeção de Dependência - 01](DicasUteis/exemplo-injecaoDeDependencia(0).jpeg "Injeção de Dependência - 01")
+    ![Injeção de Dependência - 02](DicasUteis/exemplo-injecaoDeDependencia(1).jpeg "Injeção de Dependência - 02")
   - Anatomia do módulo:
-
-![Árvore de Componentes](DicasUteis/Angular%20-%20Anatomia%20do%20m%C3%B3dulo.jpeg "Árvore de Componentes")
+  
+  ![Árvore de Componentes](DicasUteis/Angular%20-%20Anatomia%20do%20m%C3%B3dulo.jpeg "Árvore de Componentes")
 </details>
 
 - [**Bootstrap**](exercicios-web/bootstrap/README.md):
