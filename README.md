@@ -213,7 +213,7 @@
       - Comando: `ng g s services/product`
       ```typescript
         @Injectable({     //Decorator que possibilita ser injetada em outra classe
-          providedIn: "root",
+          providedIn: "root",   // root é um injector do AppModule
         })
         export class ProductService{
           //...
@@ -223,6 +223,8 @@
     
     ![Injeção de Dependência - 01](DicasUteis/exemplo-injecaoDeDependencia(0).jpeg "Injeção de Dependência - 01")
     ![Injeção de Dependência - 02](DicasUteis/exemplo-injecaoDeDependencia(1).jpeg "Injeção de Dependência - 02")
+
+      - Services são **Singletons** (Instância única) dentro do escopo de um injector(ModuleInjector(**@NgModule** ou **@Injectable**), ElementInjector(**@Directive** ou **@Component**))
   - Anatomia do módulo:
   
   ![Árvore de Componentes](DicasUteis/Angular%20-%20Anatomia%20do%20m%C3%B3dulo.jpeg "Árvore de Componentes")
