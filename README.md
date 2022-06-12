@@ -399,6 +399,18 @@
         Utilizar o BrowserRouter para a build em produção pode requerer alguns ajustes nas rotas principalmente quando for utilizado um servidor apache ou outros, já o HashRouter não, ele identifica a raiz da pagina sendo '/#' e identifica todas as rotas.
 </details>
 
+- **Redux**: Redux é uma biblioteca para armazenamento de estados de aplicações JavaScript, ela tira a responsabilidade de um componente ter um estado que poderá ser usado por vários outros componentes dentro da sua aplicação e passa isso para um objeto global, que pode ser acessado por qualquer componente a qualquer momento.
+  - Ele basicamente tira a responsabilidade de cada um dos componentes de armazenar os estados, deixando tudo isso centralizado, sendo utilizado ao mesmo tempo por todos os componentes de forma compartilhada. Ele também roda em diferentes ambientes como servidor, cliente e nativo.
+  - Redux é comumente aplicado em conjunto a frameworks como React, Vue, Ember, Angular,... mais comumente no React, contudo, REDUX NAO DEPENDE DO REACT.
+  - Fazendo o uso do Redux todos esses estados ficarão armazenados em uma árvore de objetos através do store. Para que isso aconteça, o Redux utiliza 3 recursos:
+    - **Store**: você pode pensar em store como um container ou um grande centro de informações, que tem disponibilidade para receber e entregar o que o seu componente requisita. A store armazena de forma centralizada todos os estados da aplicação. Vale ressaltar que a store é imutável.
+    - **Actions**: São ações disparadas da aplicação para o store. Elas são criadas através das action creators. As actions são a única forma de acionar uma mudança de estados no store.
+    - **Reducers**: Cada dado da store deve ter o seu próprio reducer. Ele é encarregado de lidar com todas as ações e especificam como o estado da aplicação irá mudar de acordo com a action que foi enviada para o store.
+  - Principios do Redux:
+    - **Todos os estados estarão disponíveis exclusivamente através do store**: todo o estado da sua aplicação vai estar armazenado nesse store que é único, onde todos os componentes vão consultar nesse store.
+    - **Os estados são somente leitura**: os componentes não podem fazer uma manipulação direta nas informações que estão nele.
+    - A**s alterações são feitas através de funções puras**: o Redux utiliza o conceito de programação funcional, por isso toda alteração no store é feita através de uma função pura, chamada de reducer. O reducer recebe o estado e a ação, onde com essa ação nós visualizamos o que precisa ser alterado no estado e o reduce entrega uma nova store do nosso estado da aplicação.
+  - **State Dealing**: Problema que um componente A precisa compartilhar estado para um Componente B mas os dois são de ramos diferentes da árvore que nao chega nem próximo.
 - **SASS**:
   - É um pré-processador CSS, com isso, permite adicionar novas funcionalidade aos CSS que nao está presente no padrão e através disso permite criar arquivos CSS com maior nível de reúso.
 - **TypeScript**:
