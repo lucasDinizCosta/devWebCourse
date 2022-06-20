@@ -17,6 +17,7 @@
 ### Atalhos:
 - `CTRL + ALT + N`: Executa o arquivo de código no VSCode
 - `CTRL + ALT + M`: Para a execução no VSCode
+- `WIN + PRINTSCREEN`: Faz um print da tela inteira, incluindo da Udemy.
 
 ### Modos de execução do Javascript
 - Ferramentas Online:
@@ -27,6 +28,9 @@
 - Node (Muito usado no backend)
 ### Extensões:
 - CodeRunner: Permite rodar comandos javascript pelo VSCode
+- vscode-database: Permite rodar comando SQL diretamente do VSCode.
+  - Erros:
+    - `MySQL Error: Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client`: solução --> `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';` => onde '123456' seria a senha configurada do seu MySQL. Deve ser informado via terminal/cmd utilizando o path do SQL Server: `mysql`.
 
 ## Comandos do NPM ou Yarn:
 - `npm init`(`npm i`) ou `yarn init`(`yarn i`) ==> Inicializa o projeto node na pasta atual, caso tenha o arquivo `package.json` será feita a instalação de todas as dependências seja com o NPM ou o YARN, caso o arquivo não exista, ele será criado.
@@ -89,8 +93,49 @@
 ![Árvore de Componentes](DicasUteis/arvoreDeComponentes.jpeg "Árvore de Componentes")
 
 - **Babel** em Javascript:
-  - É uma plataforma ou framework que permite compilar e testar o javascript do 'futuro', ou seja, com as mais novas funcionalidades lançadas, em outras palavras, é muito útil para testar codigos de javascript e ter como resultado o mesmo código mas adaptado para executar na maioria dos browsers.
+  - É uma plataforma ou framework que permite compilar e testar o javascript do 'futuro', ou seja, com as mais novas funcionalidades lançadas, em outras palavras, é muito útil para testar códigos de javascript e ter como resultado o mesmo código mas adaptado para executar na maioria dos browsers.
     - link: https://babeljs.io/
+- **Banco de Dados**:
+  - Relacional: Apresenta esquema e restrições.
+  - Não Relacional: Não apresenta esquema.
+  - Modelo Entidade/Relacionamento: É o paradigma o qual se baseia o banco de dados. Entidade seriam as tabelas.
+    - Colunas(Classes em OO): Atributos;
+    - Linhas ou Tuplas(Instancias em OO): Os dados;
+    - Exemplo: Carros 
+    
+    |  id | marca   | ano   | chassi  | cor  |
+    |---|---|---|---|---|
+    | 01  | Fiat  | 2010  | 2314897  | preto  |
+    |  02 | Ford  | 2018  |  164798 | prata  |
+  - **Chave Primária** (**P**RIMARY **K**EY):
+    - Única
+    - Não vazia;
+    - Não muda;
+    - Exemplo: Cliente
+    
+    |  cod. | nome   | email   | CPF  | 
+    |---|---|---|---|
+    | 1  | Ana  | su@boni.id  |  ...  |
+    |  2 | Bia  | datiwisoz@wuvhe.sz  | ...  |
+    |  2 | Camila  |  wowefna@jawos.dj | ...  |
+
+    - **Surrogate Key**: Chave sintética, valores gerados artificialmente que não há nenhum valor significativo para o usuário com a ideia de ser único na tabela toda.
+    - **Natural Key**: Valor único natural do objeto na tabela, por exemplo, no cadastro de pessoas poderia ser o CPF, RG, ...
+      - Problema: Se inverter CPFs ou a chave de um ir pra outro, ficará muito mais trabalhoso inverter, portanto via de regra utilizamos mais "Surrogate Key".
+    - Chave primária pode ser composta por mais de uma coluna, por exemplo C1 e C2, poderá haver repetições em C1 e C2 de maneira isolada mas nao em conjunto.
+  - Chave Estrangeira (**F**oreigner **K**ey): Quando ocorre uma relação entre duas tabelas, o atributo de uma tabela terá uma chave estrangeira na outra tabela, ou seja, a chave primaria tabela A ficará como chave estrangeira na tabela B.
+  - SQL: É dividida em 4 partes:
+    - DML (Data Manipulation Language): Comandos do tipo `SELECT`, `INSERT`, `UPDATE`, `DELETE`. Basicamente as operações de CRUD, ou seja, manipular dados.
+    - DDL (Data Definition Language): Comandos do tipo  `CREATE`, `ALTER`, `DROP`. No geral, são comandos que são relacionados a estrutura, ou seja, a definição do esquema do banco de dados.
+    - DCL (Data Control Language): Comandos relacionados a segurança do banco de dados. `GRANT`, `DENY`, `REVOKE`.
+    - TCL (Transaction Control Language): Comandos relacionados as transações do banco de dados. `BEGIN TRANS`, `COMMIT TRANS`, `ROLLBACK`.
+      - Exemplo: Caso de transferência de dinheiro entre contas de dois bancos diferentes, o valor não pode simplesmente ser removido do banco A e adicionado ao B, pois são banco de dados diferentes, além disso é completamente inseguro porque pode ocorrer da transação falhar. Resumidamente, ou todas as operações são efetivadas ou nenhuma.
+  - Comandos do MySql:
+    - `mysql -u root -p`: Inicializa o mysql com todos os acessos via terminal/cmd
+      - **OBS**: No Windows pode ser necessário adicionar a pasta 'bin' do MySQL Server como variavel de ambiente.
+    - `CREATE SCHEMA Nome_esquema;`: Cria o esquema do banco de dados;
+    - `USE Nome_esquema;`: Abre o banco de dados de schema 'Nome_esquema';
+    - `quit;` ou `exit;`: Finaliza o processo e sai do mysql;
 - **Frameworks**:
   - É um arcabouço o qual a aplicação é construída em cima, através dela é possível ter uma base para construir as aplicações. há tanto Frameworks para backend com o objetivo de persistir banco de dados, por exemplo, quanto para o FrontEnd na parte visual com o Angular.
 - **GIT**: É basicamente um método realizar o versionamento do seu código, criar backups e facilitar o trabalho em equipes através de suas **branchs**.
@@ -409,7 +454,7 @@
   - Principios do Redux:
     - **Todos os estados estarão disponíveis exclusivamente através do store**: todo o estado da sua aplicação vai estar armazenado nesse store que é único, onde todos os componentes vão consultar nesse store.
     - **Os estados são somente leitura**: os componentes não podem fazer uma manipulação direta nas informações que estão nele.
-    - A**s alterações são feitas através de funções puras**: o Redux utiliza o conceito de programação funcional, por isso toda alteração no store é feita através de uma função pura, chamada de reducer. O reducer recebe o estado e a ação, onde com essa ação nós visualizamos o que precisa ser alterado no estado e o reduce entrega uma nova store do nosso estado da aplicação.
+    - **As alterações são feitas através de funções puras**: o Redux utiliza o conceito de programação funcional, por isso toda alteração no store é feita através de uma função pura, chamada de reducer. O reducer recebe o estado e a ação, onde com essa ação nós visualizamos o que precisa ser alterado no estado e o reduce entrega uma nova store do nosso estado da aplicação.
   - **State Dealing**: Problema que um componente A precisa compartilhar estado para um Componente B mas os dois são de ramos diferentes da árvore que nao chega nem próximo.
 - **SASS**:
   - É um pré-processador CSS, com isso, permite adicionar novas funcionalidade aos CSS que nao está presente no padrão e através disso permite criar arquivos CSS com maior nível de reúso.
