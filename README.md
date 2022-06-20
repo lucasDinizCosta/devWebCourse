@@ -17,7 +17,7 @@
 ### Atalhos:
 - `CTRL + ALT + N`: Executa o arquivo de código no VSCode
 - `CTRL + ALT + M`: Para a execução no VSCode
-- `WIN + PRINTSCREEN`: Faz um print da tela inteira, incluindo da Udemy.
+- `WIN + PRINTSCREEN`: Faz um print da tela inteira, incluindo da Udemy, MENOS OS VIDEOS(ABRIR NO MOOZILA).
 
 ### Modos de execução do Javascript
 - Ferramentas Online:
@@ -136,6 +136,7 @@
     - `CREATE SCHEMA Nome_esquema;`: Cria o esquema do banco de dados;
     - `USE Nome_esquema;`: Abre o banco de dados de schema 'Nome_esquema';
     - `quit;` ou `exit;`: Finaliza o processo e sai do mysql;
+  - **UPDATE SEM WHERE**: É extremamente perigoso fazer isso pois irá atualizar a TABELA INTEIRA e nao somente uma linha.
 - **Frameworks**:
   - É um arcabouço o qual a aplicação é construída em cima, através dela é possível ter uma base para construir as aplicações. há tanto Frameworks para backend com o objetivo de persistir banco de dados, por exemplo, quanto para o FrontEnd na parte visual com o Angular.
 - **GIT**: É basicamente um método realizar o versionamento do seu código, criar backups e facilitar o trabalho em equipes através de suas **branchs**.
