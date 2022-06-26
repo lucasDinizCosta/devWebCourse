@@ -96,9 +96,8 @@
   - É uma plataforma ou framework que permite compilar e testar o javascript do 'futuro', ou seja, com as mais novas funcionalidades lançadas, em outras palavras, é muito útil para testar códigos de javascript e ter como resultado o mesmo código mas adaptado para executar na maioria dos browsers.
     - link: https://babeljs.io/
 - **Banco de Dados**:
-  - Relacional: Apresenta esquema e restrições.
-  - Não Relacional: Não apresenta esquema.
-  - Modelo Entidade/Relacionamento: É o paradigma o qual se baseia o banco de dados. Entidade seriam as tabelas.
+  - **Relacional**: Apresenta esquema e restrições.
+  - **Modelo Entidade/Relacionamento**: É o paradigma o qual se baseia o banco de dados. Entidade seriam as tabelas.
     - Colunas(Classes em OO): Atributos;
     - Linhas ou Tuplas(Instancias em OO): Os dados;
     - Exemplo: Carros 
@@ -124,11 +123,11 @@
       - Problema: Se inverter CPFs ou a chave de um ir pra outro, ficará muito mais trabalhoso inverter, portanto via de regra utilizamos mais "Surrogate Key".
     - Chave primária pode ser composta por mais de uma coluna, por exemplo C1 e C2, poderá haver repetições em C1 e C2 de maneira isolada mas nao em conjunto.
   - Chave Estrangeira (**F**oreigner **K**ey): Quando ocorre uma relação entre duas tabelas, o atributo de uma tabela terá uma chave estrangeira na outra tabela, ou seja, a chave primaria tabela A ficará como chave estrangeira na tabela B.
-  - SQL: É dividida em 4 partes:
-    - DML (Data Manipulation Language): Comandos do tipo `SELECT`, `INSERT`, `UPDATE`, `DELETE`. Basicamente as operações de CRUD, ou seja, manipular dados.
-    - DDL (Data Definition Language): Comandos do tipo  `CREATE`, `ALTER`, `DROP`. No geral, são comandos que são relacionados a estrutura, ou seja, a definição do esquema do banco de dados.
-    - DCL (Data Control Language): Comandos relacionados a segurança do banco de dados. `GRANT`, `DENY`, `REVOKE`.
-    - TCL (Transaction Control Language): Comandos relacionados as transações do banco de dados. `BEGIN TRANS`, `COMMIT TRANS`, `ROLLBACK`.
+  - **SQL**: É dividida em 4 partes:
+    - **DML** (Data Manipulation Language): Comandos do tipo `SELECT`, `INSERT`, `UPDATE`, `DELETE`. Basicamente as operações de CRUD, ou seja, manipular dados.
+    - **DDL** (Data Definition Language): Comandos do tipo  `CREATE`, `ALTER`, `DROP`. No geral, são comandos que são relacionados a estrutura, ou seja, a definição do esquema do banco de dados.
+    - **DCL** (Data Control Language): Comandos relacionados a segurança do banco de dados. `GRANT`, `DENY`, `REVOKE`.
+    - **TCL** (Transaction Control Language): Comandos relacionados as transações do banco de dados. `BEGIN TRANS`, `COMMIT TRANS`, `ROLLBACK`.
       - Exemplo: Caso de transferência de dinheiro entre contas de dois bancos diferentes, o valor não pode simplesmente ser removido do banco A e adicionado ao B, pois são banco de dados diferentes, além disso é completamente inseguro porque pode ocorrer da transação falhar. Resumidamente, ou todas as operações são efetivadas ou nenhuma.
   - Comandos do MySql:
     - `mysql -u root -p`: Inicializa o mysql com todos os acessos via terminal/cmd
@@ -137,6 +136,8 @@
     - `USE Nome_esquema;`: Abre o banco de dados de schema 'Nome_esquema';
     - `quit;` ou `exit;`: Finaliza o processo e sai do mysql;
   - **UPDATE SEM WHERE**: É extremamente perigoso fazer isso pois irá atualizar a TABELA INTEIRA e nao somente uma linha.
+  - **Não Relacional**: Não apresenta esquema.
+    - Ao utilizar o MongoDB, lembrar de criar uma pasta 'data/db' na raiz da unidade do windows.
 - **Frameworks**:
   - É um arcabouço o qual a aplicação é construída em cima, através dela é possível ter uma base para construir as aplicações. há tanto Frameworks para backend com o objetivo de persistir banco de dados, por exemplo, quanto para o FrontEnd na parte visual com o Angular.
 - **GIT**: É basicamente um método realizar o versionamento do seu código, criar backups e facilitar o trabalho em equipes através de suas **branchs**.
@@ -320,7 +321,58 @@
   - É uma biblioteca javascript muito popular, ajuda a buscar elementos na DOM. Trabalha com eventos e Ajax, utiliza os seletores do CSS, permite fazer o encadeamento de chamadas, fácil criação de plugins, suporte amplo nos browsers.
   - Pontos negativos:
     - A web está migrando para trabalhar componentes (Angular, React, vie,...), contudo, um caminho contrário ao JQuery.
+- **MongoDB**:
+  - É um banco de dados não-relacional orientado a documentos.
+  - MongoDB Compass: É uma interface gráfica que visa faciliar a utilização da ferramenta, contudo, da pra fazer tudo via linha de comando.
+  - RoboMongo (Robo 3T/studio 3T): Ferramenta semelhante ao MySQL Workbench para trabalhar com interface gráfica no MongoDB.
+  - Comandos:
+    - `show dbs`: Mostra as databases presente no MongoDB;
+    - `use NomeBase`: Troca para a base de dados determinada;
+    - `show collections`: Mostra as collections de documentos que estão presente na base de dados;
+    - `db.createCollection("item")`: Cria uma collection chamada "item";
+    - 
+      ```Javascript
+      // Adiciona 1 documento na collection
+      db.item.insert({
+        "name": "Item 1",
+        "price": 10.0
+      })
 
+      // Adiciona vários documentos na collection
+      db.item.insertMany([
+      {
+        "name": "Item 2",
+        "price": 20.0
+      },
+      {
+        "name": "Item 3",
+        "price": 30.0
+      }
+      ])
+      ```
+      Insere um documento na collection "Item".
+    - `db.item.find()`: Retorna os registros inseridos na collection "item". Também é possível limitar o número de elementos da buscas da seguinte forma: `db.item.find().limit(1)`.
+    - `db.item.find({_id: ObjectId("123456789")})` ou `db.item.find({name: "Item 2"})`: Retorna o documento que tem um parâmetro especifico.
+    - `db.item.find({name: "Item 2"}, {_id: 0, name: 1})`: Retorna o documento de nome "Item 2" mas na consulta vai ocultar o 'id' e mostrar somente o 'name'.
+    - `db.item.find().count()`: Conta quantos documentos tem na collection 'item'.
+    - `db.item.remove({_id: ObjectId("123456789")})`: Remove o documento da collection 'item'.
+    - 
+      ```Javascript
+      // Atualiza o atributo 'price' do documento de id 'ObjectId("123456789")'
+      db.item.update(
+        {_id: ObjectId("123456789")},
+        {$set: {$price: 30.00}}
+      })
+      ```
+      Atualizando dados de um documento.
+    - `db.item.find({price: {$gt: 25}})`: Retorna documentos com 'price' MAIOR que 25.
+    - `db.item.find({price: {$eq: 25}})`: Retorna documentos com 'price' IGUAL a 25.
+    - `db.item.find({price: {$lt: 25}})`: Retorna documentos com 'price' MENOR que 25.
+    - `db.item.find({price: {$in: [20.0, 30.0]}})`: Retorna documentos com 'price' OU 20 OU 30.
+    - `db.item.find({price: {$ne: 30}})`: Retorna documentos com 'price' DIFERENTE de 30.
+    - `db.item.find({price: {$nin: [20.0, 30.0]}})`: Retorna documentos com 'price' NEM 20 e NEM 30.
+    - `db.item.find({$and: [{name: "Item 12"}, {price: 30.0}]})`: Retorna documentos de 'name' = 'Item 12' E 'price' = 30.0.
+    - `db.item.find({$or: [{name: "Item 12"}, {price: 30.0}]})`: Retorna documentos de 'name' = 'Item 12' OU 'price' = 30.0.
 - [**React**](exercicios-web/react/README.md):
 <details>
   <summary>Clique aqui para expandir o conceito!</summary>
