@@ -96,7 +96,7 @@ Caso precise ocultar muitas informações, basta o usuario expandir
 - **Babel** em Javascript:
   - É uma plataforma ou framework que permite compilar e testar o javascript do 'futuro', ou seja, com as mais novas funcionalidades lançadas, em outras palavras, é muito útil para testar códigos de javascript e ter como resultado o mesmo código mas adaptado para executar na maioria dos browsers.
     - link: https://babeljs.io/
-- **Banco de Dados**:
+- **Banco de Dados Relacional**:
   - **Relacional**: Apresenta esquema e restrições.
   - **Modelo Entidade/Relacionamento**: É o paradigma o qual se baseia o banco de dados. Entidade seriam as tabelas.
     - Colunas(Classes em OO): Atributos;
@@ -137,8 +137,35 @@ Caso precise ocultar muitas informações, basta o usuario expandir
     - `USE Nome_esquema;`: Abre o banco de dados de schema 'Nome_esquema';
     - `quit;` ou `exit;`: Finaliza o processo e sai do mysql;
   - **UPDATE SEM WHERE**: É extremamente perigoso fazer isso pois irá atualizar a TABELA INTEIRA e nao somente uma linha.
-  - **Não Relacional**: Não apresenta esquema.
+  
+- **Banco de dados Não-Relacional(NoSQL)**:
+  - Representa um tipo de banco de dados *Not Only SQL*(não-relacional), ou seja, não somente SQL e de certo modo não descarta o SQL completamente. 
+  - Vale salientar que não se deve confundir com **não-SQL**.
+  - **Não Relacional**: Não apresenta esquema(estruturas, tabelas e relacionamentos).
     - Ao utilizar o MongoDB, lembrar de criar uma pasta 'data/db' na raiz da unidade do windows.
+  - Pode ser categorizado da seguinte forma:
+    - **Chave-valor** (*Key-value database*): São muito utilizados em jogos, publicidade online e na Internet das coisas (IOT). Sendo caracterizado pelo fato de serem altamente particionáveis e permitirem escalabilidade horizontal. Os dados são armazenados no padrão chave-valor como uma tabela hash.
+      - Exemplos: MemcacheD, Riak, REDIS;
+    - **Grafos**: Armazena os dados na forma de grafos, utilizando vértices, arestas. É muito utilizado em aplicações que os dados precisam estar altamente conectados. Os casos de uso mais comuns são as redes sociais, detecção de fraude, mecanismos de reconhecimento e criação de gráficos de conhecimento.
+      - Exemplos: Property Graph, RDF(*Resource Description Framework*), Neo4j. Giraph;
+    - **Colunar**(ou orientado a colunas): Armazena dados em linhas particulares de tabelas no disco. É otimizado para recuperação rápida de coluna de dados. Muito utilizado para consulta analítica pois reduz a entrada e saída em disco diminuindo a quantidade de dados que precisa carregar.
+      - Exemplos: Cassandra, Hbase; 
+    - **Pesquisa**: Construído especialmente para indexação, agregação e pesquisa de dados semi-estruturados. Pensado ainda mais para alta performance, baixa latência e análise de dados.
+      - Exemplos: Amazon ES, Expedia.
+    - **Documentos**: Também conhecido como modelo de dados semi-estruturados, ele armazena os dados como documentos. Os documentos são independentes o que torna mais fácil distribuir em uma malha de servidores.
+      - Documentos podem ser criados por chave-valor ou por JSON.
+      - Exemplos: MongoDB, CouchDB;
+  - Vantagens:
+    - 1 - Flexibilidade: Num mundo cada vez mais ágil(Desenvolvimento ágil), trabalhar com uma estrutura flexível é na maior parte dos casos o que será adotado.
+    - 2 - Escalabilidade: São pensados justamente na escalabilidade-horizontal, ou seja, distribuindo dados em clusters, ao invés dos JOIN pesados do SQL.
+    - 3 - Disponibilidade: Oferecem uma arquitetura replicação de dados visando diminuir os problemas de disponibilidade de recursos. Cada vez que um nó do cluster caia, outro poderá assumir o lugar.
+    - 4 - OpenSource: Garante o crescimento rápido e sua popularidade.
+    - 5 - Infraestrutura e baixo custo operacional: O custo para adaptar um banco de dados relacional para não-relacional é baixo.
+    - 6 - Recursos especiais:
+      - Adaptado a APIs RESTFULL;
+      - Replicação automática;
+      - Indices especiais;
+      - Consultas a dados geoespaciais;
 - **Frameworks**:
   - É um arcabouço o qual a aplicação é construída em cima, através dela é possível ter uma base para construir as aplicações. há tanto Frameworks para backend com o objetivo de persistir banco de dados, por exemplo, quanto para o FrontEnd na parte visual com o Angular.
 - **GIT**: É basicamente um método realizar o versionamento do seu código, criar backups e facilitar o trabalho em equipes através de suas **branchs**.
@@ -312,7 +339,7 @@ Caso precise ocultar muitas informações, basta o usuario expandir
   - Pontos negativos:
     - A web está migrando para trabalhar componentes (Angular, React, vie,...), contudo, um caminho contrário ao JQuery.
 - **MongoDB**:
-  - É um banco de dados não-relacional orientado a documentos.
+  - É um banco de dados **não-relacional** **orientado a documentos**.
   - MongoDB Compass: É uma interface gráfica que visa faciliar a utilização da ferramenta, contudo, da pra fazer tudo via linha de comando.
   - RoboMongo (Robo 3T/studio 3T): Ferramenta semelhante ao MySQL Workbench para trabalhar com interface gráfica no MongoDB.
   - Comandos:
@@ -516,6 +543,9 @@ Caso precise ocultar muitas informações, basta o usuario expandir
         - https://quasar.dev/
       - **Vuetify**: É uma biblioteca de componentes auxiliar do Vue voltada materiais de design de interfaces.
   - Geralmente a partir de um trecho de html como uma 'div' por exemplo, o vue pode ser responsável e controlar a renderização e comportamento daquele elemento desde que associe um <i>Vue Instance</i> ao trecho de html e logo este trecho será controlado pelo Vue.
+- **Webflow**:
+  - Com esta plataforma qualquer cidadão comum ou desenvolvedor consegue criar experiências agradáveis para o consumidor final. Esta poderosa plataforma desenvolvida pela Amazon Web Services está ajudando centenas de empreendedores ao redor do mundo.
+  - Trata-se de uma proposta elaborada pela Amazon Web Services que permite construir sites responsivos sem a necessidade de ficar digitando linhas de código intermináveis, o Webflow faz com que o site seja adaptado para diferentes tamanhos de telas, que podem ser desktops, tablets e smartphones. 
 - [**Webpack**](exercicios-web/webpack/README.md):
   - Apresenta uma finalidade similar ao GULP no sentido de minificar arquivos e realizar tarefas, contudo, a diferença é que o GULP trabalha com TASKs, ou seja, tarefas a serem executadas e utiliza o padrão PIPE para executar as tarefas, já o **webpack é diferente pois trabalha com módulos**.
   - **<u>Importante</u>**: O Webpack apresenta <u>um **módulo de entrada**</u> nas configurações e só vai conseguir chegar em outros módulos somente se tiver `import` seja no módulo principal ou nos subsequentes.
@@ -528,10 +558,6 @@ Caso precise ocultar muitas informações, basta o usuario expandir
   - **WordPress** é um sistema livre e aberto de gestão de conteúdo para internet (do inglês: *Content Management System* - CMS), baseado em **PHP** com banco de dados **MySQL**, executado em um servidor interpretador, voltado principalmente para a criação de páginas eletrônicas (sites) e blogs online.
   - É uma das ferramentas mais utilizadas para conteúdo na web, disputando com o serviço do Google, chamado Blogger. No entanto, o WordPress é adotado por aqueles que queiram uma página com maior personalização e recursos diferenciais.
   - O WordPress possui um sistema de modelos, através de um processador de modelos. O usuário pode re-organizar o layout através de widgets sem precisar editar códigos PHP ou HTML; eles também podem instalar e alternar entre temas WordPress. Os códigos PHP e HTML dos temas também podem ser editados para adicionar funcionalidades personalizadas.
-- **Webflow**:
-  - Com esta plataforma qualquer cidadão comum ou desenvolvedor consegue criar experiências agradáveis para o consumidor final. Esta poderosa plataforma desenvolvida pela Amazon Web Services está ajudando centenas de empreendedores ao redor do mundo.
-  - Trata-se de uma proposta elaborada pela Amazon Web Services que permite construir sites responsivos sem a necessidade de ficar digitando linhas de código intermináveis, o Webflow faz com que o site seja adaptado para diferentes tamanhos de telas, que podem ser desktops, tablets e smartphones. 
-
 
 <div style="color: #F88">
 <h2>Erros Comuns</h2>
