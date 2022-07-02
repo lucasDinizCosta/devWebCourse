@@ -1,0 +1,10 @@
+db.estados.aggregate([
+    { $match: {"cidades.nome": "Sorocaba"} },
+    { $unwind: "$cidades"},
+    { $match: {"cidades.nome": "Sorocaba"} },
+    { $project: {_id: "$cidades._id"} }
+]).pretty()
+-- 1 - Filtra os estados que tenham a cidade de 'Sorocaba'
+-- 2 - Gera documentos separados com cada cidade
+-- 3 - Traz somente o documento com a cidade de Sorocaba
+-- 4 - Projeta o id da cidade de Sorocaba

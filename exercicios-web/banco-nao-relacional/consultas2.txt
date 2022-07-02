@@ -1,0 +1,14 @@
+db.estados.aggregate([
+    { $project: {nome: 1, "cidades.nome": 1, _id: 0} }
+])
+-- $project : Atributos dentro do documento que vc quer que vá para o próximo pipeline
+-- $group: Agrupa os dados
+
+db.estados.aggregate([
+    { $project: {populacao: {$sum: "$cidades.populacao"}, sigla: 1, _id: 0} },
+    { $group: {_id: null, populacaoTotal: {$sum: "$populacao" }} },
+    { $project: { _id: 0, populacaoTotal: 1 } },
+])
+-- 1 - Filtra mostrando a soma das populações das cidades relativas ao estado
+-- 2 - Soma todas as populações dos estados
+-- 3 - Mostra somente a população Total sem o id

@@ -1,0 +1,68 @@
+-- OBS: Executar 'mongod' num terminal e o 'mongo' em outro
+-- MONGODB é case sensitive
+show dbs 
+-- Mostra as databases presente
+use wm
+-- Cria a database 'wm' caso não exista e aponta para ela
+db.createCollection('estados')
+-- Cria a coleção de 'estados'
+show collections
+-- Exibe as coleções
+db.createCollection('Estados')
+-- Cria a coleção de 'Estados'
+db.Estados.drop()
+-- Exclui a tabela 'Estados'
+db.estados.drop()
+-- Exclui a tabela 'estados'
+db.estados.insert({nome: "Acre", sigla: "AC", regiao: "Norte"})
+-- Adiciona o objeto na collection 'estados'
+db.estados.save({nome: "Alagoas", sigla: "AL", regiao: "Nordeste", populacao: 3322000})
+-- Também adiciona o objeto na collection 'estados'
+db.estados.find()
+-- Exibe os objetos na collection 'estados'
+db.estados.find().pretty()
+-- Exibe os objetos na collection 'estados' num formato parecido com JSON, mais legível.
+db.estados.insert({
+    nome: "Rio de Janeiro",
+    sigla: "RJ",
+    regiao: "Sudeste",
+    cidades: [{
+        nome: "Niterói",
+        area: 133.9,
+        populacao: 487562
+    }]
+})
+-- Adiciona o objeto na collection 'estados' informando em linhas separadas
+db.help()
+-- Mostra dicas de métodos que pode ser usado no MongoDB
+
+Estado
+nome = São Paulo, sigla = SP, regiao = Sudeste
+    Cidades
+    nome = Campinas, area = 795.7, prefeito = Jonas Donizette, populacao = 1081000
+    nome = Guarulhos, populacao = 1325000
+    nome = Sorocaba, distanciaCapital = 87, populacao = 644919
+
+Cada cidade tem o atributo _id <- ObjectId
+
+db.estados.insert({
+    nome: "São Paulo",
+    sigla: "SP",
+    regiao: "Sudeste",
+    cidades: [{
+        _id: ObjectId(),
+        nome: "Campinas",
+        area: 795.7,
+        prefeito: "Jonas Donizette",
+        populacao: 1081000
+    }, {
+        _id: ObjectId(),
+        nome: "Guarulhos", 
+        populacao: 1325000
+    }, {
+        _id: ObjectId(),
+        nome: "Sorocaba", 
+        distanciaCapital: 87, 
+        populacao: 644919
+    }]
+})

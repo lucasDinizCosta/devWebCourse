@@ -1,0 +1,29 @@
+db.estados.find()
+-- Busca todos os estados
+
+db.estados.find().pretty()
+-- Busca todos os estados e exibe de maneira mais legível
+
+db.estados.findOne()
+-- Busca um elemento, neste caso, o primeiro
+
+db.estados.findOne({sigla: "RJ"})
+-- Busca o primeiro elemento que tem um atributo específico
+
+db.estados.find({$or: [{sigla: "RJ"}, {sigla: "AC"}]}).pretty()
+-- Busca os elementos que tenham um atributo OU outro
+
+db.estados.find({populacao: {$exists: true}}).pretty()
+-- Busca todos os elementos se o atributo EXISTIR
+
+db.estados.find().skip(1).limit(2)
+-- Buscar todos os elementos PULANDO o primeiro e se LIMITANDO a 2 resultados de busca
+
+db.estados.count()
+-- Conta todos os registros dentro da collection
+
+db.estados.find({sigla: "SP"}, {nome: 1, sigla: 1, _id: 0})
+-- Buscar os elementos com um atributo específico mas mostrar apenas NOME, SIGLA e nao aparecer o id
+
+db.estados.find({sigla: "SP"}, {"cidades.nome": 1, _id: 0})
+-- De cidades trazer apenas o atributo 'nome'
