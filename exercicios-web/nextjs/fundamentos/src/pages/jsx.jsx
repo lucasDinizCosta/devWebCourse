@@ -1,3 +1,5 @@
+import Layout from "../components/Layout"
+
 export default function	Jsx(){
     const a = 4
     const b = 3
@@ -11,21 +13,23 @@ export default function	Jsx(){
     }
 
     return (
-        <div>
-            {titulo}
-            {subtitulo()}
-            {   // Interpreta o código como Javascript e não como texto de HTML
-                a * b
-            }
-            <br />
-            {
-                Math.random()
-            }
-            <br />
-            
-            <p>
-                {JSON.stringify({nome: 'João', idade: 30})}
-            </p>
-        </div>
+        <Layout titulo="Entendendo o JSX">
+            <div>
+                {titulo}
+                {subtitulo()}
+                {   // Interpreta o código como Javascript e não como texto de HTML
+                    a * b
+                }
+                <br />
+                {
+                    Math.random()
+                }
+                <br />
+                
+                <p>
+                    {JSON.stringify({nome: 'João', idade: 30})}
+                </p>
+            </div>
+        </Layout>
     )
 }
