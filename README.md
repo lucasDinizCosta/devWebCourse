@@ -7,6 +7,7 @@
 - Seção 21: Projeto Galeria (**Bootstrap/JQuery/Webpack**) -- [Galeria](exercicios-web/bootstrap/projeto-galeria/)
 - Seção 23: Projeto Calculadora (**REACT**) -- [Calculadora](exercicios-web/react/calculator)
 - Seção 24: Projeto de Cadastro de Usuários (**REACT**) -- [CRUD](exercicios-web/react/crud/)
+- Seção 25: Projeto de Cadastro - Integração com Banco de Dados(Firestore/Firebase) (**NEXT**) -- [CRUD](exercicios-web/nextjs/next-crud/)
 - Seção 27: Projetos **Vue** -- [QRCode](exercicios-web/vue/qrcode/)
 - Seção 28: Calculadora (**Vue**) -- [Calculadora](exercicios-web/vue/calculator/)
 - Seção 29: Projeto MontyHall (**Vue**) -- [MontyHall](exercicios-web/vue/montyhall/)
@@ -27,9 +28,10 @@
 - Browser (Chrome, Firefox, Brave, Opera, ...)
 - Node (Muito usado no backend)
 ### Extensões:
-- CodeRunner: Permite rodar comandos javascript pelo VSCode
-- JSON Viewer (No Google Chrome): Melhora a visualização de JSON no navegador
-- vscode-database: Permite rodar comando SQL diretamente do VSCode.
+- **CodeRunner**: Permite rodar comandos javascript pelo VSCode
+- **Tailwind CSS IntelliSense**: Da Snippets do CSS Tailwind no VSCode
+- **JSON Viewer** (No Google Chrome): Melhora a visualização de JSON no navegador
+- **vscode-database**: Permite rodar comando SQL diretamente do VSCode.
   - Erros:
     - `MySQL Error: Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client`: solução --> `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';` => onde '123456' seria a senha configurada do seu MySQL. Deve ser informado via terminal/cmd utilizando o path do SQL Server: `mysql`.
 
