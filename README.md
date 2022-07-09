@@ -28,6 +28,7 @@
 - Node (Muito usado no backend)
 ### Extensões:
 - CodeRunner: Permite rodar comandos javascript pelo VSCode
+- JSON Viewer (No Google Chrome): Melhora a visualização de JSON no navegador
 - vscode-database: Permite rodar comando SQL diretamente do VSCode.
   - Erros:
     - `MySQL Error: Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client`: solução --> `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';` => onde '123456' seria a senha configurada do seu MySQL. Deve ser informado via terminal/cmd utilizando o path do SQL Server: `mysql`.
